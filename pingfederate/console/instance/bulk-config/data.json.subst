@@ -456,10 +456,10 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
+                    "USER_ADMINISTRATOR",
                     "ADMINISTRATOR",
                     "CRYPTO_ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR",
-                    "USER_ADMINISTRATOR"
+                    "EXPRESSION_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
