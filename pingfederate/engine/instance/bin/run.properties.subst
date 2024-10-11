@@ -1,0 +1,9 @@
+# PingFederate Initialization Properties File
+
+# The properties in this file control the administrative console as well as
+# the runtime server (transaction-processing) behavior, and deployment,
+# including server clustering. Changes are optional. For detailed information,
+# refer to the Administrator's Manual and the Server Clustering Guide.
+
+pf.cluster.bind.address=NON_LOOPBACK
+pf.cluster.tcp.discovery.initial.hosts=pingfederateconsole.localdev
