@@ -3,7 +3,7 @@
     <urn:Client client_id="pa_wam" name="PingAccessWebAccessManagement" logo="" secret="4H9IHZ-MCmHRr3JpDWdqYACrieLu0tKGpSqI8roRBVI.W2IivXin.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2024-10-11T08:01:34.546Z" creationTime="2024-10-11T07:32:38.659Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
         <urn:Description/>
         <urn:Grant type="authorization_code"/>
-        <urn:RedirectUri>https://pingaccess.traefik.me/pa/oidc/cb</urn:RedirectUri>
+        <urn:RedirectUri>https://www.traefik.me/pa/oidc/cb</urn:RedirectUri>
         <urn:SupplementalInfo key="CREATION_TIME" value="1728631958659"/>
         <urn:SupplementalInfo key="SECRET_CHANGED_TIME" value="1728633694"/>
         <urn:SupplementalInfo key="DEVICE_FLOW_SETTING" value="SERVER_DEFAULT"/>
