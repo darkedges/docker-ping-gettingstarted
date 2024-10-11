@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:PluginConfiguration isInheritExtendedContractAttributes="false" lastModified="2024-10-11T07:23:59.486Z" name="mypcv" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields/>
+    <urn:AdvancedFields/>
+    <urn:Tables>
+        <urn:Table name="Users">
+            <urn:Row defaultRow="false">
+                <urn:Field name="Username">ping</urn:Field>
+                <urn:Field name="Password">v5tcUZ_jdZb8tI-hkTdGqDeL98UdfAefRTDNYofnbWA.fgsKp34j.2</urn:Field>
+                <urn:Field name="Confirm Password">FBFrmiBm2WXzKNegpDbENNj_2OBfX5lxZF_mW46tcSg.6eA-Yy1f.2</urn:Field>
+                <urn:Field name="Relax Password Requirements">false</urn:Field>
+            </urn:Row>
+        </urn:Table>
+    </urn:Tables>
+    <urn:ExtendedAttributesAdditionalProperties/>
+</urn:PluginConfiguration>
