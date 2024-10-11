@@ -1,16 +1,6 @@
 {
-    "metadata": {"pfVersion": "12.1.3.0"},
+    "metadata": {"pfVersion": "10.1.2.0"},
     "operations": [
-        {
-            "operationType": "SAVE",
-            "subResource": "cert-time-tracking",
-            "items": [{
-                "stringValue": "1728629808",
-                "id": "vtcm75en83g6v1r87ytm7lihi",
-                "type": "STRING"
-            }],
-            "resourceType": "/configStore"
-        },
         {
             "operationType": "SAVE",
             "subResource": "com.pingidentity.crypto.LunaJCEManager",
@@ -219,7 +209,7 @@
             "operationType": "SAVE",
             "items": [{
                 "accepted": true,
-                "licenseAgreementUrl": "https://localhost:9999/pf-admin-api/license-agreement"
+                "licenseAgreementUrl": "https://${PF_ADMIN_PUBLIC_HOSTNAME}/pf-admin-api/license-agreement"
             }],
             "resourceType": "/license/agreement"
         },
@@ -228,7 +218,6 @@
             "items": [{
                 "password": "${keyPairs_sslServer_items_vtcm75en83g6v1r87ytm7lihi_vtcm75en83g6v1r87ytm7lihi_password}",
                 "fileData": "${keyPairs_sslServer_items_vtcm75en83g6v1r87ytm7lihi_vtcm75en83g6v1r87ytm7lihi_fileData}",
-                "format": "PKCS12",
                 "id": "vtcm75en83g6v1r87ytm7lihi"
             }],
             "resourceType": "/keyPairs/sslServer"
@@ -237,19 +226,19 @@
             "operationType": "SAVE",
             "items": [{
                 "activeRuntimeServerCerts": [{
-                    "location": "https://localhost:9999/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
+                    "location": "https://localhost:-1/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
                     "id": "vtcm75en83g6v1r87ytm7lihi"
                 }],
                 "activeAdminConsoleCerts": [{
-                    "location": "https://localhost:9999/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
+                    "location": "https://localhost:-1/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
                     "id": "vtcm75en83g6v1r87ytm7lihi"
                 }],
                 "adminConsoleCertRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
+                    "location": "https://localhost:-1/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
                     "id": "vtcm75en83g6v1r87ytm7lihi"
                 },
                 "runtimeServerCertRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
+                    "location": "https://localhost:-1/pf-admin-api/v1/keyPairs/sslServer/vtcm75en83g6v1r87ytm7lihi",
                     "id": "vtcm75en83g6v1r87ytm7lihi"
                 }
             }],
@@ -263,24 +252,19 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "maskAttributeValues": false,
                 "connectionUrlTags": [{
                     "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                     "defaultSource": true
                 }],
-                "type": "JDBC",
-                "userName": "sa",
-                "maskAttributeValues": false,
                 "password": "${dataStores_items_ProvisionerDS_ProvisionerDS_password}",
-                "minPoolSize": 10,
                 "allowMultiValueAttributes": false,
                 "driverClass": "org.hsqldb.jdbcDriver",
-                "idleTimeout": 5,
                 "name": "ProvisionerDS (sa)",
                 "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                 "id": "ProvisionerDS",
-                "lastModified": "2024-10-11T06:56:48.257Z",
-                "maxPoolSize": 100,
-                "blockingTimeout": 5000
+                "type": "JDBC",
+                "userName": "sa"
             }],
             "resourceType": "/dataStores"
         },
@@ -291,17 +275,12 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{}],
-            "resourceType": "/captchaProviders/settings"
-        },
-        {
-            "operationType": "SAVE",
             "items": [{
                 "federationInfo": {
-                    "saml2EntityId": "https://pfruntime.traefik.me/idp",
+                    "saml2EntityId": "evaluation",
                     "saml1xIssuerId": "",
                     "wsfedRealm": "",
-                    "baseUrl": "https://pfruntime.traefik.me",
+                    "baseUrl": "https://localhost:9031",
                     "saml1xSourceId": ""
                 },
                 "contactInfo": {},
@@ -334,11 +313,7 @@
                         "enableSaml10": true
                     }
                 },
-                "notifications": {
-                    "notifyAdminUserPasswordChanges": false,
-                    "expiringCertificateAdministrativeConsoleWarningDays": 14,
-                    "expiredCertificateAdministrativeConsoleWarningDays": 14
-                }
+                "notifications": {"notifyAdminUserPasswordChanges": false}
             }],
             "resourceType": "/serverSettings"
         },
@@ -360,7 +335,7 @@
             "operationType": "SAVE",
             "items": [{
                 "dataStoreRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
+                    "location": "https://localhost:-1/pf-admin-api/v1/dataStores/ProvisionerDS",
                     "id": "ProvisionerDS"
                 },
                 "synchronizationFrequency": 60
@@ -370,96 +345,12 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "subjectDns": [],
-                "clientCertAuthnEnabled": false,
-                "restrictByIssuerCert": false,
-                "issuerCerts": [],
-                "basicAuthnEnabled": false,
-                "restrictBySubjectDn": false,
-                "users": []
-            }],
-            "resourceType": "/serverSettings/wsTrustStsSettings"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
-                "datastoreValidationIntervalSecs": 300,
-                "spConnectionTransactionLoggingOverride": "DONT_OVERRIDE",
-                "disableAutomaticConnectionValidation": false,
-                "idpConnectionTransactionLoggingOverride": "DONT_OVERRIDE",
-                "requestHeaderForCorrelationId": ""
-            }],
-            "resourceType": "/serverSettings/generalSettings"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{"logCategories": [
-                {
-                    "name": "Core",
-                    "description": "Debug logging for core components.",
-                    "id": "core",
-                    "enabled": false
-                },
-                {
-                    "name": "Protocol Requests and Responses",
-                    "description": "Log protocol request and response messages.",
-                    "id": "protocolrequestresponse",
-                    "enabled": false
-                },
-                {
-                    "name": "Policy Tree",
-                    "description": "Policy tree debug logging.",
-                    "id": "policytree",
-                    "enabled": false
-                },
-                {
-                    "name": "Data Store Response Times",
-                    "description": "Log response times for data store requests.",
-                    "id": "dsresponsetime",
-                    "enabled": false
-                },
-                {
-                    "name": "Trusted CAs",
-                    "description": "Log PingFederate and JRE trusted CAs when they are loaded.",
-                    "id": "trustedcas",
-                    "enabled": false
-                },
-                {
-                    "name": "XML Signatures",
-                    "description": "Debug logging for XML signature operations.",
-                    "id": "xmlsig",
-                    "enabled": false
-                },
-                {
-                    "name": "HTTP Request Headers",
-                    "description": "Log HTTP request headers. Sensitive information, such as passwords, may be logged when this category is enabled.",
-                    "id": "requestheaders",
-                    "enabled": false
-                },
-                {
-                    "name": "HTTP Request Parameters",
-                    "description": "Log HTTP GET request parameters. Sensitive information, such as passwords, may be logged when this category is enabled.",
-                    "id": "requestparams",
-                    "enabled": false
-                },
-                {
-                    "name": "REST Data Store Requests and Responses",
-                    "description": "Log REST datastore requests and responses. Sensitive information, such as passwords, may be logged when this category is enabled.",
-                    "id": "restdatastore",
-                    "enabled": false
-                }
-            ]}],
-            "resourceType": "/serverSettings/logSettings"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
+                    "EXPRESSION_ADMINISTRATOR",
                     "USER_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "CRYPTO_ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR"
+                    "CRYPTO_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -489,7 +380,6 @@
                 "redirectValidationLocalSettings": {
                     "enableTargetResourceValidationForSLO": true,
                     "enableInErrorResourceValidation": true,
-                    "uriAllowList": [],
                     "whiteList": [],
                     "enableTargetResourceValidationForSSO": true,
                     "enableTargetResourceValidationForIdpDiscovery": true
@@ -523,447 +413,16 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{
-                "configuration": {
-                    "tables": [{
-                        "name": "Users",
-                        "rows": [{
-                            "defaultRow": false,
-                            "fields": [
-                                {
-                                    "name": "Username",
-                                    "value": "ping"
-                                },
-                                {
-                                    "name": "Password",
-                                    "value": "${passwordCredentialValidators_items_mypcv_configuration_tables_rows_fields_Password_value}"
-                                },
-                                {
-                                    "name": "Confirm Password",
-                                    "value": "${passwordCredentialValidators_items_mypcv_configuration_tables_rows_fields_Confirm_Password_value}"
-                                },
-                                {
-                                    "name": "Relax Password Requirements",
-                                    "value": "false"
-                                }
-                            ]
-                        }]
-                    }],
-                    "fields": []
-                },
-                "name": "mypcv",
-                "id": "mypcv",
-                "lastModified": "2024-10-11T07:23:59.486Z",
-                "pluginDescriptorRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
-                    "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
-                },
-                "attributeContract": {"coreAttributes": [{"name": "username"}]}
-            }],
-            "resourceType": "/passwordCredentialValidators"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
-                "sequenceNumber": 202342,
-                "sessionValidationSettings": {
-                    "updateAuthnSessionActivity": false,
-                    "checkValidAuthnSession": false,
-                    "includeSessionId": false,
-                    "checkSessionRevocationStatus": false
-                },
-                "configuration": {
-                    "tables": [],
-                    "fields": [
-                        {
-                            "name": "Token Length",
-                            "value": "28"
-                        },
-                        {
-                            "name": "Token Lifetime",
-                            "value": "120"
-                        },
-                        {
-                            "name": "Lifetime Extension Policy",
-                            "value": "NONE"
-                        },
-                        {
-                            "name": "Maximum Token Lifetime",
-                            "value": ""
-                        },
-                        {
-                            "name": "Lifetime Extension Threshold Percentage",
-                            "value": "30"
-                        },
-                        {
-                            "name": "Mode for Synchronous RPC",
-                            "value": "3"
-                        },
-                        {
-                            "name": "RPC Timeout",
-                            "value": "500"
-                        },
-                        {
-                            "name": "Expand Scope Groups",
-                            "value": "false"
-                        }
-                    ]
-                },
-                "name": "GeneralAccessToken",
-                "id": "GeneralAccessToken",
-                "lastModified": "2024-10-11T07:26:57.386Z",
-                "pluginDescriptorRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin",
-                    "id": "org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin"
-                },
-                "accessControlSettings": {
-                    "restrictClients": false,
-                    "allowedClients": []
-                },
-                "attributeContract": {
-                    "coreAttributes": [],
-                    "extendedAttributes": [{
-                        "name": "UserName",
-                        "multiValued": false
-                    }]
-                },
-                "selectionSettings": {"resourceUris": []}
-            }],
-            "resourceType": "/oauth/accessTokenManagers"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{"defaultAccessTokenManagerRef": {
-                "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/GeneralAccessToken",
-                "id": "GeneralAccessToken"
-            }}],
+            "items": [{}],
             "resourceType": "/oauth/accessTokenManagers/settings"
         },
         {
             "operationType": "SAVE",
             "items": [{
                 "forceTcp": false,
-                "debugLogOutput": false,
-                "keySetRetentionPeriodMins": 610
+                "debugLogOutput": false
             }],
             "resourceType": "/kerberos/realms/settings"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
-                "attributeMapping": {
-                    "attributeContractFulfillment": {
-                        "policy.action": {
-                            "source": {"type": "ADAPTER"},
-                            "value": "policy.action"
-                        },
-                        "username": {
-                            "source": {"type": "ADAPTER"},
-                            "value": "username"
-                        }
-                    },
-                    "attributeSources": [],
-                    "issuanceCriteria": {"conditionalCriteria": []}
-                },
-                "configuration": {
-                    "tables": [{
-                        "name": "Credential Validators",
-                        "rows": [{
-                            "defaultRow": false,
-                            "fields": [{
-                                "name": "Password Credential Validator Instance",
-                                "value": "mypcv"
-                            }]
-                        }]
-                    }],
-                    "fields": [
-                        {
-                            "name": "Challenge Retries",
-                            "value": "3"
-                        },
-                        {
-                            "name": "Session State",
-                            "value": "None"
-                        },
-                        {
-                            "name": "Session Timeout",
-                            "value": "60"
-                        },
-                        {
-                            "name": "Session Max Timeout",
-                            "value": "480"
-                        },
-                        {
-                            "name": "Allow Password Changes",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Password Management System",
-                            "value": ""
-                        },
-                        {
-                            "name": "Enable 'Remember My Username'",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Enable 'This is My Device'",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Change Password Policy Contract",
-                            "value": ""
-                        },
-                        {
-                            "name": "Change Password Email Notification",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Show Password Expiring Warning",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Password Reset Type",
-                            "value": "NONE"
-                        },
-                        {
-                            "name": "Password Reset Policy Contract",
-                            "value": ""
-                        },
-                        {
-                            "name": "Revoke Sessions After Password Change Or Reset",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Account Unlock",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Local Identity Profile",
-                            "value": ""
-                        },
-                        {
-                            "name": "Notification Publisher",
-                            "value": ""
-                        },
-                        {
-                            "name": "Enable Username Recovery",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Login Template",
-                            "value": "html.form.login.template.html"
-                        },
-                        {
-                            "name": "Logout Path",
-                            "value": ""
-                        },
-                        {
-                            "name": "Logout Redirect",
-                            "value": ""
-                        },
-                        {
-                            "name": "Logout Template",
-                            "value": "idp.logout.success.page.template.html"
-                        },
-                        {
-                            "name": "Change Password Template",
-                            "value": "html.form.change.password.template.html"
-                        },
-                        {
-                            "name": "Change Password Message Template",
-                            "value": "html.form.message.template.html"
-                        },
-                        {
-                            "name": "Password Management System Message Template",
-                            "value": "html.form.message.template.html"
-                        },
-                        {
-                            "name": "Password Update Timeout",
-                            "value": "30"
-                        },
-                        {
-                            "name": "Change Password Email Template",
-                            "value": "message-template-end-user-password-change.html"
-                        },
-                        {
-                            "name": "Expiring Password Warning Template",
-                            "value": "html.form.password.expiring.notification.template.html"
-                        },
-                        {
-                            "name": "Threshold for Expiring Password Warning",
-                            "value": "7"
-                        },
-                        {
-                            "name": "Snooze Interval for Expiring Password Warning",
-                            "value": "24"
-                        },
-                        {
-                            "name": "Require Re-Authentication For Expiring Password Flow",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Require Re-Authentication for Change Password Flow",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Require Re-Authentication for Password Reset Flow",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Login Challenge Template",
-                            "value": "html.form.login.challenge.template.html"
-                        },
-                        {
-                            "name": "'Remember My Username' Lifetime",
-                            "value": "30"
-                        },
-                        {
-                            "name": "'This is My Device' Lifetime",
-                            "value": "30"
-                        },
-                        {
-                            "name": "Allow Username Edits During Chaining",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Track Authentication Time",
-                            "value": "true"
-                        },
-                        {
-                            "name": "Post-Password Change Re-Authentication Delay",
-                            "value": "0"
-                        },
-                        {
-                            "name": "Password Reset One-Time Link Email Template",
-                            "value": "message-template-forgot-password-link.html"
-                        },
-                        {
-                            "name": "Password Reset One-Time Password Email Template",
-                            "value": "message-template-forgot-password-code.html"
-                        },
-                        {
-                            "name": "Account Disabled Email Template",
-                            "value": "message-template-account-disabled.html"
-                        },
-                        {
-                            "name": "Password Reset Complete Email Template",
-                            "value": "message-template-forgot-password-complete.html"
-                        },
-                        {
-                            "name": "Password Reset Failed Email Template",
-                            "value": "message-template-forgot-password-failed.html"
-                        },
-                        {
-                            "name": "Password Reset Username Template",
-                            "value": "forgot-password.html"
-                        },
-                        {
-                            "name": "Password Reset Code Template",
-                            "value": "forgot-password-resume.html"
-                        },
-                        {
-                            "name": "Password Reset Template",
-                            "value": "forgot-password-change.html"
-                        },
-                        {
-                            "name": "Password Reset Error Template",
-                            "value": "forgot-password-error.html"
-                        },
-                        {
-                            "name": "Password Reset Success Template",
-                            "value": "forgot-password-success.html"
-                        },
-                        {
-                            "name": "Account Unlock Template",
-                            "value": "account-unlock.html"
-                        },
-                        {
-                            "name": "Account Unlock Email Template",
-                            "value": "message-template-account-unlock-complete.html"
-                        },
-                        {
-                            "name": "OTP Length",
-                            "value": "8"
-                        },
-                        {
-                            "name": "Allowed OTP Character Set",
-                            "value": "23456789BCDFGHJKMNPQRSTVWXZbcdfghjkmnpqrstvwxz"
-                        },
-                        {
-                            "name": "OTP Time to Live",
-                            "value": "10"
-                        },
-                        {
-                            "name": "PingID Properties",
-                            "value": ""
-                        },
-                        {
-                            "name": "Require Verified Email",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Username Recovery Template",
-                            "value": "username.recovery.template.html"
-                        },
-                        {
-                            "name": "Username Recovery Info Template",
-                            "value": "username.recovery.info.template.html"
-                        },
-                        {
-                            "name": "Username Recovery Email Template",
-                            "value": "message-template-username-recovery.html"
-                        },
-                        {
-                            "name": "CAPTCHA Provider",
-                            "value": ""
-                        },
-                        {
-                            "name": "CAPTCHA for Authentication",
-                            "value": "false"
-                        },
-                        {
-                            "name": "CAPTCHA for Password change",
-                            "value": "false"
-                        },
-                        {
-                            "name": "CAPTCHA for Password Reset",
-                            "value": "false"
-                        },
-                        {
-                            "name": "CAPTCHA for Username recovery",
-                            "value": "false"
-                        },
-                        {
-                            "name": "Fail Authentication on Account Lockout",
-                            "value": "false"
-                        }
-                    ]
-                },
-                "name": "myidp",
-                "id": "myidp",
-                "lastModified": "2024-10-11T07:24:51.595Z",
-                "pluginDescriptorRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
-                    "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
-                },
-                "attributeContract": {
-                    "maskOgnlValues": false,
-                    "coreAttributes": [
-                        {
-                            "masked": false,
-                            "name": "policy.action",
-                            "pseudonym": false
-                        },
-                        {
-                            "masked": false,
-                            "name": "username",
-                            "pseudonym": true
-                        }
-                    ],
-                    "extendedAttributes": []
-                }
-            }],
-            "resourceType": "/idp/adapters"
         },
         {
             "operationType": "SAVE",
@@ -977,92 +436,6 @@
             "operationType": "SAVE",
             "items": [{"confirmSlo": false}],
             "resourceType": "/sp/defaultUrls"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
-                "persistentGrantContract": {
-                    "coreAttributes": [
-                        {"name": "USER_KEY"},
-                        {"name": "USER_NAME"}
-                    ],
-                    "extendedAttributes": []
-                },
-                "scopeGroups": [],
-                "atmIdForOAuthGrantManagement": "",
-                "offlineAccessRequireConsentPrompt": false,
-                "refreshRollingInterval": 0,
-                "tokenEndpointBaseUrl": "",
-                "trackUserSessionsForLogout": false,
-                "parStatus": "ENABLED",
-                "defaultScopeDescription": "default scope",
-                "refreshTokenRollingGracePeriod": 60,
-                "authorizationCodeEntropy": 30,
-                "persistentGrantIdleTimeout": 30,
-                "rollRefreshTokenValues": false,
-                "requireOfflineAccessScopeToIssueRefreshTokens": false,
-                "allowedOrigins": [],
-                "allowUnidentifiedClientExtensionGrants": false,
-                "devicePollingInterval": 5,
-                "bypassAuthorizationForApprovedConsents": false,
-                "persistentGrantIdleTimeoutTimeUnit": "DAYS",
-                "userAuthorizationUrl": "",
-                "dpopProofRequireNonce": false,
-                "jwtSecuredAuthorizationResponseModeLifetime": 600,
-                "clientSecretRetentionPeriod": 0,
-                "dpopProofEnforceReplayPrevention": false,
-                "pendingAuthorizationTimeout": 600,
-                "disallowPlainPKCE": false,
-                "consentLifetimeDays": -1,
-                "exclusiveScopeGroups": [],
-                "userAuthorizationConsentPageSetting": "INTERNAL",
-                "bypassActivationCodeConfirmation": false,
-                "includeIssuerInAuthorizationResponse": false,
-                "refreshRollingIntervalTimeUnit": "HOURS",
-                "persistentGrantReuseGrantTypes": ["IMPLICIT"],
-                "registeredAuthorizationPath": "",
-                "dpopProofLifetimeSeconds": 120,
-                "persistentGrantLifetime": -1,
-                "refreshTokenLength": 42,
-                "allowUnidentifiedClientROCreds": false,
-                "authorizationCodeTimeout": 60,
-                "persistentGrantLifetimeUnit": "DAYS",
-                "activationCodeCheckMode": "AFTER_AUTHENTICATION",
-                "scopes": [
-                    {
-                        "name": "address",
-                        "description": "address",
-                        "dynamic": false
-                    },
-                    {
-                        "name": "phone",
-                        "description": "phone",
-                        "dynamic": false
-                    },
-                    {
-                        "name": "openid",
-                        "description": "openid",
-                        "dynamic": false
-                    },
-                    {
-                        "name": "profile",
-                        "description": "profile",
-                        "dynamic": false
-                    },
-                    {
-                        "name": "email",
-                        "description": "email",
-                        "dynamic": false
-                    }
-                ],
-                "enableCookielessUserAuthorizationAuthenticationApi": false,
-                "scopeForOAuthGrantManagement": "",
-                "parReferenceTimeout": 60,
-                "exclusiveScopes": [],
-                "parReferenceLength": 24,
-                "bypassAuthorizationForApprovedGrants": false
-            }],
-            "resourceType": "/oauth/authServerSettings"
         },
         {
             "operationType": "SAVE",
@@ -1085,7 +458,6 @@
             "operationType": "SAVE",
             "items": [{
                 "persistentSessions": false,
-                "hashUniqueUserKeyAttribute": false,
                 "maxTimeoutMins": 480,
                 "maxTimeoutDisplayUnit": "MINUTES",
                 "idleTimeoutMins": 60,
@@ -1097,25 +469,44 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "attributeContractFulfillment": {
-                    "USER_NAME": {
-                        "source": {"type": "ADAPTER"},
-                        "value": "username"
-                    },
-                    "USER_KEY": {
-                        "source": {"type": "ADAPTER"},
-                        "value": "username"
-                    }
+                "persistentGrantContract": {
+                    "coreAttributes": [
+                        {"name": "USER_KEY"},
+                        {"name": "USER_NAME"}
+                    ],
+                    "extendedAttributes": []
                 },
-                "idpAdapterRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/myidp",
-                    "id": "myidp"
-                },
-                "id": "myidp",
-                "attributeSources": [],
-                "issuanceCriteria": {"conditionalCriteria": []}
+                "scopeGroups": [],
+                "atmIdForOAuthGrantManagement": "",
+                "refreshRollingInterval": 0,
+                "tokenEndpointBaseUrl": "",
+                "trackUserSessionsForLogout": false,
+                "defaultScopeDescription": "",
+                "authorizationCodeEntropy": 30,
+                "persistentGrantIdleTimeout": 30,
+                "rollRefreshTokenValues": false,
+                "allowedOrigins": [],
+                "allowUnidentifiedClientExtensionGrants": false,
+                "devicePollingInterval": 5,
+                "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+                "userAuthorizationUrl": "",
+                "pendingAuthorizationTimeout": 600,
+                "exclusiveScopeGroups": [],
+                "userAuthorizationConsentPageSetting": "INTERNAL",
+                "bypassActivationCodeConfirmation": false,
+                "persistentGrantReuseGrantTypes": ["IMPLICIT"],
+                "registeredAuthorizationPath": "",
+                "persistentGrantLifetime": -1,
+                "refreshTokenLength": 42,
+                "allowUnidentifiedClientROCreds": false,
+                "authorizationCodeTimeout": 60,
+                "persistentGrantLifetimeUnit": "DAYS",
+                "scopes": [],
+                "scopeForOAuthGrantManagement": "",
+                "exclusiveScopes": [],
+                "bypassAuthorizationForApprovedGrants": false
             }],
-            "resourceType": "/oauth/idpAdapterMappings"
+            "resourceType": "/oauth/authServerSettings"
         },
         {
             "operationType": "SAVE",
@@ -1124,54 +515,11 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{
-                "idTokenTypHeaderValue": "",
-                "scopeAttributeMappings": {},
-                "returnIdTokenOnRefreshGrant": false,
-                "includeSriInIdToken": false,
-                "includeSHashInIdToken": false,
-                "includeUserInfoInIdToken": false,
-                "attributeContract": {
-                    "coreAttributes": [{
-                        "name": "sub",
-                        "multiValued": false
-                    }],
-                    "extendedAttributes": []
-                },
-                "attributeMapping": {
-                    "attributeContractFulfillment": {"sub": {
-                        "source": {"type": "TOKEN"},
-                        "value": "UserName"
-                    }},
-                    "attributeSources": [],
-                    "issuanceCriteria": {"conditionalCriteria": []}
-                },
-                "includeX5tInIdToken": false,
-                "name": "OIDC",
-                "id": "OIDC",
-                "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2024-10-11T07:30:23.845Z",
-                "idTokenLifetime": 5,
-                "accessTokenManagerRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/GeneralAccessToken",
-                    "id": "GeneralAccessToken"
-                }
-            }],
-            "resourceType": "/oauth/openIdConnect/policies"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
-                "defaultPolicyRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/openIdConnect/policies/OIDC",
-                    "id": "OIDC"
-                },
-                "sessionSettings": {
-                    "sessionRevocationLifetime": 490,
-                    "trackUserSessionsForLogout": false,
-                    "revokeUserSessionOnLogout": true
-                }
-            }],
+            "items": [{"sessionSettings": {
+                "sessionRevocationLifetime": 490,
+                "trackUserSessionsForLogout": false,
+                "revokeUserSessionOnLogout": true
+            }}],
             "resourceType": "/oauth/openIdConnect/settings"
         },
         {
@@ -1186,145 +534,13 @@
         },
         {
             "operationType": "SAVE",
-            "items": [
-                {
-                    "bypassApprovalPage": false,
-                    "offlineAccessRequireConsentPrompt": "SERVER_DEFAULT",
-                    "persistentGrantReuseType": "SERVER_DEFAULT",
-                    "persistentGrantIdleTimeoutType": "SERVER_DEFAULT",
-                    "requireSignedRequests": false,
-                    "description": "",
-                    "persistentGrantIdleTimeout": 0,
-                    "enabled": true,
-                    "requireOfflineAccessScopeToIssueRefreshTokens": "SERVER_DEFAULT",
-                    "oidcPolicy": {
-                        "grantAccessSessionRevocationApi": false,
-                        "grantAccessSessionSessionManagementApi": false,
-                        "pingAccessLogoutCapable": false,
-                        "logoutMode": "NONE",
-                        "pairwiseIdentifierUserType": false
-                    },
-                    "persistentGrantExpirationTime": 0,
-                    "restrictedResponseTypes": [],
-                    "requireProofKeyForCodeExchange": false,
-                    "enableCookielessAuthenticationApi": false,
-                    "persistentGrantIdleTimeoutTimeUnit": "DAYS",
-                    "restrictToDefaultAccessTokenManager": false,
-                    "validateUsingAllEligibleAtms": false,
-                    "restrictScopes": false,
-                    "clientId": "pa_rs",
-                    "requireJwtSecuredAuthorizationResponseMode": false,
-                    "persistentGrantExpirationTimeUnit": "DAYS",
-                    "requireDpop": false,
-                    "allowAuthenticationApiInit": false,
-                    "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2024-10-11T07:31:41.748Z",
-                    "deviceFlowSettingType": "SERVER_DEFAULT",
-                    "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
-                    "logoUrl": "",
-                    "authorizationDetailTypes": [],
-                    "grantTypes": ["ACCESS_TOKEN_VALIDATION"],
-                    "modificationDate": "2024-10-11T08:19:18.908Z",
-                    "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
-                    "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2024-10-11T08:19:18.000Z",
-                    "name": "PingAccessResourceServer",
-                    "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
-                    "persistentGrantExpirationType": "SERVER_DEFAULT",
-                    "restrictedScopes": [],
-                    "refreshRolling": "SERVER_DEFAULT",
-                    "exclusiveScopes": [],
-                    "clientAuth": {
-                        "secondarySecrets": [],
-                        "secret": "${oauth_clients_items_clientAuth_pa_rs_secret}",
-                        "type": "SECRET"
-                    }
-                },
-                {
-                    "bypassApprovalPage": true,
-                    "offlineAccessRequireConsentPrompt": "SERVER_DEFAULT",
-                    "persistentGrantReuseType": "SERVER_DEFAULT",
-                    "persistentGrantIdleTimeoutType": "SERVER_DEFAULT",
-                    "requireSignedRequests": false,
-                    "description": "",
-                    "persistentGrantIdleTimeout": 0,
-                    "enabled": true,
-                    "requireOfflineAccessScopeToIssueRefreshTokens": "SERVER_DEFAULT",
-                    "oidcPolicy": {
-                        "grantAccessSessionRevocationApi": false,
-                        "grantAccessSessionSessionManagementApi": false,
-                        "pingAccessLogoutCapable": false,
-                        "logoutMode": "NONE",
-                        "pairwiseIdentifierUserType": false
-                    },
-                    "persistentGrantExpirationTime": 0,
-                    "restrictedResponseTypes": [],
-                    "requireProofKeyForCodeExchange": false,
-                    "enableCookielessAuthenticationApi": false,
-                    "persistentGrantIdleTimeoutTimeUnit": "DAYS",
-                    "restrictToDefaultAccessTokenManager": false,
-                    "validateUsingAllEligibleAtms": false,
-                    "restrictScopes": false,
-                    "clientId": "pa_wam",
-                    "requireJwtSecuredAuthorizationResponseMode": false,
-                    "persistentGrantExpirationTimeUnit": "DAYS",
-                    "requireDpop": false,
-                    "allowAuthenticationApiInit": false,
-                    "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2024-10-11T07:32:38.659Z",
-                    "deviceFlowSettingType": "SERVER_DEFAULT",
-                    "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
-                    "logoUrl": "",
-                    "authorizationDetailTypes": [],
-                    "grantTypes": ["AUTHORIZATION_CODE"],
-                    "modificationDate": "2024-10-11T08:01:34.546Z",
-                    "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
-                    "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2024-10-11T08:01:34.000Z",
-                    "name": "PingAccessWebAccessManagement",
-                    "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
-                    "persistentGrantExpirationType": "SERVER_DEFAULT",
-                    "restrictedScopes": [],
-                    "refreshRolling": "SERVER_DEFAULT",
-                    "exclusiveScopes": [],
-                    "clientAuth": {
-                        "secondarySecrets": [],
-                        "secret": "${oauth_clients_items_clientAuth_pa_wam_secret}",
-                        "type": "SECRET"
-                    }
-                }
-            ],
-            "resourceType": "/oauth/clients"
-        },
-        {
-            "operationType": "SAVE",
             "items": [{"clientMetadata": []}],
             "resourceType": "/oauth/clientSettings"
         },
         {
             "operationType": "SAVE",
             "items": [{
-                "context": {"type": "DEFAULT"},
-                "attributeContractFulfillment": {"UserName": {
-                    "source": {"type": "OAUTH_PERSISTENT_GRANT"},
-                    "value": "USER_KEY"
-                }},
-                "id": "default|GeneralAccessToken",
-                "attributeSources": [],
-                "issuanceCriteria": {"conditionalCriteria": []},
-                "accessTokenManagerRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/GeneralAccessToken",
-                    "id": "GeneralAccessToken"
-                }
-            }],
-            "resourceType": "/oauth/accessTokenMappings"
-        },
-        {
-            "operationType": "SAVE",
-            "items": [{
                 "apiEnabled": false,
-                "restrictAccessToRedirectlessMode": false,
-                "includeRequestContext": false,
                 "enableApiDescriptions": true
             }],
             "resourceType": "/authenticationApi/settings"
