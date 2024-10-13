@@ -532,7 +532,28 @@
                             "fields": [
                                 {
                                     "name": "Username",
-                                    "value": "ping"
+                                    "value": "app1"
+                                },
+                                {
+                                    "name": "Password",
+                                    "value": "${passwordCredentialValidators_items_mypcv_configuration_tables_rows_fields_Password_value}"
+                                },
+                                {
+                                    "name": "Confirm Password",
+                                    "value": "${passwordCredentialValidators_items_mypcv_configuration_tables_rows_fields_Confirm_Password_value}"
+                                },
+                                {
+                                    "name": "Relax Password Requirements",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        {
+                            "defaultRow": false,
+                            "fields": [
+                                {
+                                    "name": "Username",
+                                    "value": "app2"
                                 },
                                 {
                                     "name": "Password",
