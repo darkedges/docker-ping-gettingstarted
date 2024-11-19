@@ -1,0 +1,41 @@
+dsconfig create-deployment-package-store \
+    --store-name FileStore  \
+    --type filesystem  \
+    --set poll-directory:/tmp/deployment
+
+dsconfig create-external-server \
+    --server-name CIAM  \
+    --type api  \
+    --set base-url:https://fram.connectid.darkedges.com
+
+dsconfig create-access-token-validator \
+    --validator-name CIAM  \
+    --type jwt  \
+    --set enabled:true  \
+    --set authorization-server:CIAM  \
+    --set jwks-endpoint-path:https://fram.connectid.darkedges.com/openam/oauth2/connect/jwk_uri
+
+dsconfig create-external-server \
+    --server-name ProviderAPI  \
+    --type api  \
+    --set base-url:http://providerapi.kong:8080
+
+dsconfig create-gateway-api-endpoint \
+    --endpoint-name ProviderAPI  \
+    --set inbound-base-path:/providerapi  \
+    --set outbound-base-path:/  \
+    --set api-server:ProviderAPI
+
+dsconfig create-sideband-api-shared-secret \
+    --secret-name KongGateway  \
+    --set shared-secret:AABolYuYjHiGbH5pGwVuEDNPKdA62eUiqJQ=
+
+dsconfig create-sideband-api-endpoint \
+    --endpoint-name ProviderAPI  \
+    --set service:ProviderAPI  \
+    --set resource-path:/provider  \
+    --set base-path:/provider
+
+dsconfig set-http-servlet-extension-prop \
+    --extension-name "Sideband API"  \
+    --set request-context-method:request
