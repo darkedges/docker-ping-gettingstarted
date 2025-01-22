@@ -1,1 +1,3627 @@
-[{"@class":"DataStreamHeader","kind":"SnapshotHeader","version":4},{"type":"SnapshotPackageFile$PackageHeader","snapshotId":"4c832bad-f649-4e28-bebe-4a87a2a1ac64","snapshotFileVersion":4,"applicationVersion":"10.1.0.2"},{"objectType":"ServiceDefinition","id":"614bea3a-6fcf-4f73-9c4d-5609e5f9ea1a","version":"c9e52bc0-8781-42fc-88c3-f793b313c8be","type":"SERVICE","name":"ProviderAPI","fullName":"ProviderAPI","description":"","parentId":null,"numberOfChildren":null,"valueType":"STRING","serviceType":"NONE","secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"serviceSettings":{"serviceSettingsType":"ServiceSettings","maximumConcurrentRequests":2,"maximumRequestsPerSecond":1000000.0,"retryStrategy":"BACKOFF","timeout":2000,"retries":2,"holdoff":1000,"retryJitter":10.0,"description":null,"holdoffMultiplier":2.0,"definitions":[]},"cacheSettings":null,"valueProcessor":null,"properties":[]},{"objectType":"AttributeDefinition","id":"48cbff9b-53dd-429b-9e67-12daed81ec7f","version":"a08c611b-7a40-4f18-99b2-324dd1e5168f","type":"ATTRIBUTE","name":"Gateway","fullName":"Gateway","description":"Policy attributes specific to the Data Governance gateway.","parentId":null,"numberOfChildren":2,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"request","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":null,"properties":[]},{"objectType":"AttributeDefinition","id":"a007b39b-33ca-436c-977f-21a4831daa96","version":"0872153a-a713-4cfc-9959-ac2649df4fca","type":"ATTRIBUTE","name":"HttpRequest","fullName":"HttpRequest","description":"A JSON object representing the HTTP request.","parentId":null,"numberOfChildren":12,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"request","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":null,"properties":[]},{"objectType":"AttributeDefinition","id":"6a922d6c-8173-4b75-aa5a-99ff2ccafc64","version":"03ef1ee7-a542-45ca-856d-9aa492d984bc","type":"ATTRIBUTE","name":"PatientRecord","fullName":"PatientRecord","description":"","parentId":null,"numberOfChildren":2,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"request","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":null,"properties":[]},{"objectType":"ActionDefinition","id":"5c34b551-1dc4-4605-999b-6f1ec2bbe526","version":"0372908b-7b2e-4591-aa93-24a30aa289c3","type":"ACTION","name":"authorize","fullName":"authorize","description":"Action used to authorize PDP API endpoint clients.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"cbbf13bf-0827-4d23-accc-190fb633b908","version":"b2a1e6ec-8fba-4683-816a-0ad418b81afd","type":"ACTION","name":"create","fullName":"create","description":"Action used to authorize SCIM operations that create a new resource.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"4a681458-0582-4228-8eea-d563b3b5eba4","version":"490a0bf6-3b3c-4405-bdb9-648973726520","type":"ACTION","name":"delete","fullName":"delete","description":"Action used to authorize SCIM operations that delete a resource.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"722a87ec-fdd4-4c34-85e3-b2f58525c0c3","version":"3da0297b-f111-46ca-88a6-1d6b1d2dcfb1","type":"ACTION","name":"inbound-DELETE","fullName":"inbound-DELETE","description":"Action used when authorizing HTTP DELETE requests.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"b357623b-15da-4781-b772-ed64a89aeabb","version":"94778131-463d-4264-9ac4-9c0dfe6d7a6a","type":"ACTION","name":"inbound-GET","fullName":"inbound-GET","description":"Action used to authorize HTTP GET requests.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"51123a74-7067-4e61-a75b-e95cf0ddb357","version":"3d8bb3f8-d4ee-42f6-818c-52d52706f41f","type":"ACTION","name":"inbound-PATCH","fullName":"inbound-PATCH","description":"Action used to authorize HTTP PATCH requests.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"b072d76e-0085-4423-99c2-4e16b74e88fa","version":"6ad23a1c-391a-46d5-9de1-7070aead4ab0","type":"ACTION","name":"inbound-POST","fullName":"inbound-POST","description":"Action used to authorize HTTP POST requests.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"c5a7e47c-ccd1-4aba-8d43-7f92c17cbf33","version":"f8d4b7f6-5510-4745-8248-98bf27891e63","type":"ACTION","name":"inbound-PUT","fullName":"inbound-PUT","description":"Action used to authorize HTTP PUT requests.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"0338888f-fd67-45d1-9ebd-db4457a6bc09","version":"27a35c6c-acd8-471c-8bf5-8b5ac0a3b879","type":"ACTION","name":"modify","fullName":"modify","description":"Action used to authorize SCIM operations that modify a resource, including both PUT and PATCH operations.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"4941d2a4-2c49-4ebb-9292-f3cccd0b8027","version":"f4d1503c-375e-4167-a96b-e1c5e3122523","type":"ACTION","name":"outbound-DELETE","fullName":"outbound-DELETE","description":"Action used for authorizing HTTP DELETE responses.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6","version":"b00e89b3-8c9b-47ef-ae7f-44a8876a7254","type":"ACTION","name":"outbound-GET","fullName":"outbound-GET","description":"Action used to authorize HTTP GET responses.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"b893b33d-6c0c-402b-847c-84962fbc7f4d","version":"873d6cd0-eb5e-45b6-b6cc-a3e8529bce01","type":"ACTION","name":"outbound-PATCH","fullName":"outbound-PATCH","description":"Action used to authorize HTTP PATCH responses.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"f738086a-7cb5-4cc7-8451-6bc49a6092f0","version":"0887dc32-1195-4b05-a515-e374c431f558","type":"ACTION","name":"outbound-POST","fullName":"outbound-POST","description":"Action used to authorize HTTP POST responses.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"94d795a8-7454-4a44-9b55-bbf04fc16bcb","version":"6321f992-eb96-474f-994d-adc66ca5c47f","type":"ACTION","name":"outbound-PUT","fullName":"outbound-PUT","description":"Action used to authorize HTTP PUT responses.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"9592ecbc-68c4-4d1a-980a-eeb6a3b4c209","version":"64f32eb9-e743-476c-83eb-ccad4d95033d","type":"ACTION","name":"retrieve","fullName":"retrieve","description":"Action used to authorize SCIM operations that return a resource to the client.   This action is used for SCIM GET operations as well as for authorizing responses from SCIM POST, PATCH, and PUT.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"44da9abd-3299-45b2-bc23-7e76ecfde490","version":"0edbad76-4ff8-4b88-832b-f6ca2533b39f","type":"ACTION","name":"search","fullName":"search","description":"Action used to authorize a SCIM search operation before the search is performed. Advice may modify the SCIM search filter or set the policy processing mode.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ActionDefinition","id":"b3ad7d85-cdad-4bb6-a67f-47d09d62913f","version":"9c3312f6-7939-4460-a685-2dd97571b43b","type":"ACTION","name":"search-results","fullName":"search-results","description":"Action used to authorize SCIM search results in a single policy operation. Only used if an alternate policy processing mode was selected using the combine-scim-search-authorizations advice.","parentId":null,"numberOfChildren":null,"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"AttributeDefinition","id":"36f58f26-b912-4322-920d-2a4b1e3f1a08","version":"4ec6b708-e718-4e37-bc44-f3d0c11179f1","type":"ATTRIBUTE","name":"BasePath","fullName":"Gateway.BasePath","description":"The portion of the HTTP request URI that matches the API Endpoint's inbound-base-path value.","parentId":"48cbff9b-53dd-429b-9e67-12daed81ec7f","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"48cbff9b-53dd-429b-9e67-12daed81ec7f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"_BasePath","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"585de1ab-8282-454b-85de-43853e88c6bd","version":"0c0e9949-88cf-49bd-a5ba-1d1d441ee015","type":"ATTRIBUTE","name":"TrailingPath","fullName":"Gateway.TrailingPath","description":"The portion of the HTTP request URI that follows the _BasePath.","parentId":"48cbff9b-53dd-429b-9e67-12daed81ec7f","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"48cbff9b-53dd-429b-9e67-12daed81ec7f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"_TrailingPath","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"8e568465-2e7c-4705-8d94-53102ea8550f","version":"0fafef52-8b68-47cd-8ff2-0b460765200b","type":"ATTRIBUTE","name":"AccessToken","fullName":"HttpRequest.AccessToken","description":"JSON object representing the decoded access token that was passed from the client to authorize the current HTTP request.   Most fields of the access token are consistent with those defined by RFC 7519, JSON Web Token, and/or RFC 7662, OAuth 2.0 Token Introspection.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":15,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"AccessToken","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"094ac83f-2d28-4065-8650-56f30e246abc","version":"7cd46a3b-1287-4232-ae32-9e43d5b35b99","type":"ATTRIBUTE","name":"ClientCertificate","fullName":"HttpRequest.ClientCertificate","description":"","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":7,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"ClientCertificate","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"08f8bef7-fc93-485d-aa25-395be62a3e8a","version":"d10735ae-dc22-4f19-91b5-708c63f03408","type":"ATTRIBUTE","name":"CorrelationId","fullName":"HttpRequest.CorrelationId","description":"A unique identifier attached to a request/response pair by the DataGovernance Server.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"CorrelationId","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"4d1cabb6-692d-45f1-8c25-7443163c3be6","version":"7c5fa83f-bad9-48a4-8758-e98bcdb60230","type":"ATTRIBUTE","name":"Headers","fullName":"HttpRequest.Headers","description":"A JSON object representing the HTTP headers that were passed with the client's HTTP request.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).\n\nThis attribute is deprecated and has been replaced by the RequestHeaders attribute.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"Headers","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"e9098367-467a-436f-96ed-0e4c0621ca95","version":"43627876-9f2f-4c6c-9981-01ceda785497","type":"ATTRIBUTE","name":"QueryParameters","fullName":"HttpRequest.QueryParameters","description":"A JSON object representing the query parameters, if any, that were passed with the client's HTTP request.   Each field in the object represents a parameter name, and the value of each field is a JSON array representing the parameter value(s).","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"QueryParameters","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"4e210505-eb7a-428b-b948-1d7e9538ca34","version":"9f62e700-5d89-433c-9fdc-34e380dcf301","type":"ATTRIBUTE","name":"RequestBody","fullName":"HttpRequest.RequestBody","description":"For POST, PUT, and PATCH operations, this attribute will contain the JSON body of the HTTP request.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"RequestBody","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"f6f0e407-f383-4e32-9d36-e5c5f822b853","version":"6567fcfe-f539-4314-9091-fda9714e9335","type":"ATTRIBUTE","name":"RequestHeaders","fullName":"HttpRequest.RequestHeaders","description":"A JSON object representing the HTTP headers that were passed with the client's HTTP request.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"RequestHeaders","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"618d0e40-6e74-4370-b896-7c114011667a","version":"531b7818-5916-438b-9b5a-379128a9f886","type":"ATTRIBUTE","name":"RequestURI","fullName":"HttpRequest.RequestURI","description":"The complete HTTP request URI.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"RequestURI","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"70f94c27-358f-4a20-a968-43799acd3d1b","version":"6939ed27-0aee-4249-a607-063eb06b3d98","type":"ATTRIBUTE","name":"ResourcePath","fullName":"HttpRequest.ResourcePath","description":"The path of the requested resource, relative to the base URI of the Data Governance endpoint that is processing the request.  For a SCIM request, an example path would be \"Users/abcdef\".","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":1,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"ResourcePath","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"2139c312-6f7d-49ff-8d00-c48231ed8f19","version":"cec0af47-976a-45b1-95c0-10589dfc0845","type":"ATTRIBUTE","name":"ResponseBody","fullName":"HttpRequest.ResponseBody","description":"The body of the HTTP response, before it is returned to a client application.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":"{}","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"ResponseBody","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"34b6d4a1-e25f-4c68-a36c-d0a3010e20dc","version":"521b5015-d200-45cd-9362-9960c25b13c0","type":"ATTRIBUTE","name":"ResponseHeaders","fullName":"HttpRequest.ResponseHeaders","description":"A JSON object representing the HTTP headers that were passed with the API server's HTTP response.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"JSON","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"ResponseHeaders","valueType":"JSON","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"7b017331-88bd-4a50-bbf0-285801d2f393","version":"9544a08c-5e54-4e6c-9846-64261cc49984","type":"ATTRIBUTE","name":"ResponseStatus","fullName":"HttpRequest.ResponseStatus","description":"The HTTP status code of a response returned from an API server, such as 200 or 404.","parentId":"a007b39b-33ca-436c-977f-21a4831daa96","numberOfChildren":null,"valueType":"NUMBER","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"a007b39b-33ca-436c-977f-21a4831daa96","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"ResponseStatus","valueType":"NUMBER","name":null},"properties":[]},{"objectType":"ConditionDefinition","id":"cd212c60-6cf3-4156-9c17-a32162fdda6a","version":"f27d5185-ebff-4e10-b2b0-7dc9c1a0f69e","type":"CONDITION","name":"Any Inbound Request","fullName":"Any Inbound Request","description":"Matches requests with inbound REST actions.","parentId":null,"numberOfChildren":null,"condition":{"or":{"conditions":[{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"722a87ec-fdd4-4c34-85e3-b2f58525c0c3"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"b357623b-15da-4781-b772-ed64a89aeabb"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"51123a74-7067-4e61-a75b-e95cf0ddb357"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"b072d76e-0085-4423-99c2-4e16b74e88fa"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"c5a7e47c-ccd1-4aba-8d43-7f92c17cbf33"}}}}]}},"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"ConditionDefinition","id":"3ca55ccd-cf36-4e24-be42-5eb4d54e6466","version":"0deb7c34-8b5c-4323-a489-ae312068966c","type":"CONDITION","name":"Any Outbound Request","fullName":"Any Outbound Request","description":"Matches requests with outbound REST actions.","parentId":null,"numberOfChildren":null,"condition":{"or":{"conditions":[{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"4941d2a4-2c49-4ebb-9292-f3cccd0b8027"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"b893b33d-6c0c-402b-847c-84962fbc7f4d"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"f738086a-7cb5-4cc7-8451-6bc49a6092f0"}}}},{"comparison":{"left":{"requestAxis":{"type":"ACTION"}},"op":"Equals","right":{"definition":{"id":"94d795a8-7454-4a44-9b55-bbf04fc16bcb"}}}}]}},"permissions":{"inherit":true,"rolePermissions":[]},"properties":[]},{"objectType":"AttributeDefinition","id":"9d722951-77a8-4ae6-94f9-6ced4adfee17","version":"a3d74b42-aab9-49fb-a2a2-2b44a7eb7719","type":"ATTRIBUTE","name":"active","fullName":"HttpRequest.AccessToken.active","description":"Whether this access token is currently active, as determined by the access token validator of the Policy Enforcement Point.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"BOOLEAN","defaultValue":"false","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"$.active","valueType":"BOOLEAN","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"c1b425d7-a1a4-499f-9917-1d715a84c817","version":"bceca9f7-fb0b-4555-ac4c-23c0c06c9aea","type":"ATTRIBUTE","name":"actor_subject","fullName":"HttpRequest.AccessToken.actor_subject","description":"","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":".act.sub","valueType":"STRING","name":""},"properties":[]},{"objectType":"AttributeDefinition","id":"906145d2-15d2-43b5-968a-375d13d907d2","version":"d83eacc1-7861-42a9-b1d6-7f199f3f1131","type":"ATTRIBUTE","name":"audience","fullName":"HttpRequest.AccessToken.audience","description":"Identifies the recipient(s) that the access token is intended for.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"COLLECTION","defaultValue":"[]","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"aud","valueType":"COLLECTION","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"4dd3a38e-39c6-44aa-99d7-106eb4e2b860","version":"509317b7-804b-46eb-ba3d-d593044e46bf","type":"ATTRIBUTE","name":"client_id","fullName":"HttpRequest.AccessToken.client_id","description":"The client identifier of the client application that requested this token.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"client_id","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"0e206ccc-c44d-4a56-a0ed-02698df6a3d7","version":"86d2d392-15e4-4f2c-8042-46003ea9c417","type":"ATTRIBUTE","name":"expiration","fullName":"HttpRequest.AccessToken.expiration","description":"The date and time at which the access token will expire.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"DATE_TIME","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"exp","valueType":"DATE_TIME","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"bbebabe1-0bb4-4800-a35c-bb5f5ace9ded","version":"33edb863-bcef-46a3-b708-666eaaaa2ee8","type":"ATTRIBUTE","name":"issued_at","fullName":"HttpRequest.AccessToken.issued_at","description":"The date and time at which this access token was issued.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"DATE_TIME","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"iat","valueType":"DATE_TIME","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"2e483fd0-8032-4542-86b8-ed54d7c327d4","version":"e27b5f75-8610-4a80-b79d-4a6e432c3bf7","type":"ATTRIBUTE","name":"issuer","fullName":"HttpRequest.AccessToken.issuer","description":"A string identifying the issuer of this access token.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"iss","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"3e5191dd-bb0e-4e0f-889c-6601e0e0c4ee","version":"dcfe1b68-7614-4cd2-94f3-1ae6340594ef","type":"ATTRIBUTE","name":"not_before","fullName":"HttpRequest.AccessToken.not_before","description":"The date and time before which the access token must not be accepted for processing.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"DATE_TIME","defaultValue":"PT0H0M0S","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"nbf","valueType":"DATE_TIME","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"447bf9bf-0cf0-4b62-9b55-58fc9f606f49","version":"e5e17541-2a15-42e1-877e-44b43eaf5cad","type":"ATTRIBUTE","name":"scope","fullName":"HttpRequest.AccessToken.scope","description":"The list of scopes granted to this token.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"COLLECTION","defaultValue":"[]","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"scope","valueType":"COLLECTION","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"ee41314a-eb03-4a6e-9561-82ff8dd13865","version":"0e925064-fc8f-4b3f-998d-7db35b39e574","type":"ATTRIBUTE","name":"subject","fullName":"HttpRequest.AccessToken.subject","description":"The subject of the token. This will be a user identifier as set by the authorization server that issued the token.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"sub","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"907db9e4-2586-486b-aefb-17ddc642e475","version":"37623130-31ca-4e88-88a9-fc877fc75d24","type":"ATTRIBUTE","name":"subname","fullName":"HttpRequest.AccessToken.subname","description":"Human-readable identifier for the end-user principal who authorized this token.   Not present for client credentials tokens.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"subname","valueType":"STRING","name":""},"properties":[]},{"objectType":"AttributeDefinition","id":"e8c5981b-fed8-4c44-b4aa-baf4dccdb166","version":"4325c8f1-b5a4-493d-98e8-04911bf88f8e","type":"ATTRIBUTE","name":"token_owner","fullName":"HttpRequest.AccessToken.token_owner","description":"Identifies the principal (end-user) that was mapped from the access token subject.  This will be a user identifier as determined by the Data Governance Server's access token validator. For SCIM users, this will be of the form <Resource Type>/<SCIM Id>, e.g. \"Users/abcdef\".","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"token_owner","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"bbb885f0-d289-4715-aeb2-d02f3bf6a756","version":"e5ba4b2e-cad8-472f-8499-26957f798a92","type":"ATTRIBUTE","name":"token_type","fullName":"HttpRequest.AccessToken.token_type","description":"Type of the token as defined in Section 5.1 of OAuth 2.0 [RFC6749].","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"token_type","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"c991b61d-d41d-451c-9759-b06686b3f459","version":"0f7b5cc4-031f-485e-a459-d13a868fcb00","type":"ATTRIBUTE","name":"user_token","fullName":"HttpRequest.AccessToken.user_token","description":"Whether this token was issued on behalf of a user. If false, then this token was issued to a client and does not have a specific user as its subject.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"BOOLEAN","defaultValue":"false","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"user_token","valueType":"BOOLEAN","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"7602b001-96d1-459d-b122-30abbb48886d","version":"4c6749bb-b08b-4c4d-b2a3-cd4b621939cb","type":"ATTRIBUTE","name":"username","fullName":"HttpRequest.AccessToken.username","description":"Human-readable identifier for the end-user principal who authorized this token.   Not present for client credentials tokens.","parentId":"8e568465-2e7c-4705-8d94-53102ea8550f","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"8e568465-2e7c-4705-8d94-53102ea8550f","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"username","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"d930c3ee-77ca-4cb8-b0ad-e521c556e961","version":"57aba568-4a17-43a1-b0af-1e0d2074b83c","type":"ATTRIBUTE","name":"algorithm","fullName":"HttpRequest.ClientCertificate.algorithm","description":"The name of the certificate signature algorithm.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"algorithm","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"34f4b267-949e-4778-b0ea-0df1ed32f4e0","version":"f2074cc7-8f93-44ab-985c-63312b5d0e12","type":"ATTRIBUTE","name":"issuer","fullName":"HttpRequest.ClientCertificate.issuer","description":"The issuer X.500 Principal.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"issuer","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"15d98d87-9225-4451-9283-b23a3c199f32","version":"3127379f-c367-4185-96bd-0d2563f5dd99","type":"ATTRIBUTE","name":"notAfter","fullName":"HttpRequest.ClientCertificate.notAfter","description":"Expiration date/time of the certificate.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"DATE_TIME","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"notAfter","valueType":"DATE_TIME","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"ce2415d3-2f52-4184-9d6a-7b4f7c1dc55a","version":"58aed1c5-b25d-444c-88b8-1d55065b7b8f","type":"ATTRIBUTE","name":"notBefore","fullName":"HttpRequest.ClientCertificate.notBefore","description":"The earliest date on which this certificate should be considered valid.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"DATE_TIME","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"notBefore","valueType":"DATE_TIME","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"431562c1-3e57-4d79-bacd-532f6af7fba7","version":"7765161b-eb4d-455e-a522-055995f978dc","type":"ATTRIBUTE","name":"subject","fullName":"HttpRequest.ClientCertificate.subject","description":"The subject X500 Principal.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"subject","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"3ca7193a-f48a-48b2-b66b-74572d8d0605","version":"2b7b35e6-dba9-48d9-8014-185537a9038e","type":"ATTRIBUTE","name":"valid","fullName":"HttpRequest.ClientCertificate.valid","description":"Whether the client SSL certificate is valid.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"BOOLEAN","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"094ac83f-2d28-4065-8650-56f30e246abc","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"valid","valueType":"BOOLEAN","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"354ae71a-f26d-4449-aa8b-f203c1e92d08","version":"b1762425-093f-447e-b905-f5f7c3681dd3","type":"ATTRIBUTE","name":"leaf","fullName":"HttpRequest.ResourcePath.leaf","description":"The leaf segment of the Resource URI.","parentId":"70f94c27-358f-4a20-a968-43799acd3d1b","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"70f94c27-358f-4a20-a968-43799acd3d1b","condition":null,"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"spel","expression":"substring(lastIndexOf('/') + 1)","valueType":"STRING","name":null},"properties":[]},{"objectType":"AttributeDefinition","id":"ef032023-b474-4a63-8afe-ae02d7b6a5f9","version":"12d3a6c6-4d38-4835-9ff8-57fafff71b21","type":"ATTRIBUTE","name":"Patient Doctor","fullName":"PatientRecord.Patient Doctor","description":"","parentId":"6a922d6c-8173-4b75-aa5a-99ff2ccafc64","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"2139c312-6f7d-49ff-8d00-c48231ed8f19","condition":{"empty":{}},"valueProcessor":null,"name":null}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"$.doctor","valueType":"STRING","name":""},"properties":[]},{"objectType":"AttributeDefinition","id":"13d72706-16cb-4f14-8871-f63c72dcbe11","version":"6bd6f5ff-34aa-4f58-a184-68d35a436aef","type":"ATTRIBUTE","name":"Patient Record Owner","fullName":"PatientRecord.Patient Record Owner","description":"","parentId":"6a922d6c-8173-4b75-aa5a-99ff2ccafc64","numberOfChildren":null,"valueType":"STRING","defaultValue":null,"repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[{"attributeResolverType":"attribute","id":"2139c312-6f7d-49ff-8d00-c48231ed8f19","condition":{"empty":{}},"valueProcessor":null,"name":""}],"querySettings":null,"valueProcessor":{"type":"json-path","expression":"$.patient","valueType":"STRING","name":""},"properties":[]},{"objectType":"AttributeDefinition","id":"99b7905c-1200-4cf8-9c31-29b13c61344c","version":"413ff391-4c1e-4f18-8096-487e41f7ac40","type":"ATTRIBUTE","name":"subjectRegex","fullName":"HttpRequest.ClientCertificate.subjectRegex","description":"Regular expression that must be matched by the subject field of the certificate in order to ensure that the certificate belongs to the requesting client.","parentId":"094ac83f-2d28-4065-8650-56f30e246abc","numberOfChildren":null,"valueType":"STRING","defaultValue":"_null","repetitionSource":null,"cacheConfig":{"timeToLive":0,"scopeAttributeId":null,"strategy":"NO_CACHING"},"secret":false,"permissions":{"inherit":true,"rolePermissions":[]},"resolvers":[],"querySettings":null,"valueProcessor":{"type":"spel","expression":"\"^CN={{4dd3a38e-39c6-44aa-99d7-106eb4e2b860|unsafe}}.*\"","valueType":"STRING","name":null},"properties":[]},{"type":"SnapshotPackageFile$PackageSeparator"},{"id":"1c93ee51-44ec-4ad3-8bee-bc3f58a06b15","version":"aefe384e-75ea-4310-a1c8-fec8378f9d15","type":"Statement","name":"Exclude private data","description":"","shared":false,"code":"exclude-attributes","appliesTo":"ANYTHING","appliesIf":"PATH_MATCHES","payload":"[\"data.private\"]","obligatory":false,"permissions":{"inherit":true,"rolePermissions":[]},"attributes":[],"services":[]},{"id":"51119f2f-ab5b-4184-8108-53daeceb834f","version":"c5f4a55f-a191-491f-80a4-b9a9eb8602e8","type":"Statement","name":"Include attributes permitted by scope","description":"","shared":false,"code":"include-attributes","appliesTo":"PERMIT","appliesIf":"PATH_MATCHES","payload":"[\"CHANGEME\"]","obligatory":true,"permissions":{"inherit":true,"rolePermissions":[]},"attributes":[],"services":[]},{"id":"ca9c5cc4-a666-4ed8-8775-48ee891e8db6","version":"f1f0e990-8def-405b-9491-ee0f49a80a77","type":"Target","name":"Inline target","description":"","shared":false,"permissions":{"inherit":true,"rolePermissions":[]},"targeted":{"services":["614bea3a-6fcf-4f73-9c4d-5609e5f9ea1a"],"actions":["fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6"]},"properties":[]},{"id":"02938580-6f18-40b1-af7b-e6408ad88e7a","version":"acc7cc9f-1573-44a0-b605-78d1a647d05d","type":"Rule","name":"PatientRecord","description":"","shared":false,"disabled":false,"permissions":{"inherit":true,"rolePermissions":[]},"condition":{"and":{"conditions":[{"comparison":{"left":{"attribute":{"id":"2e483fd0-8032-4542-86b8-ed54d7c327d4"}},"op":"Equals","right":{"constant":{"value":"https://fram.connectid.darkedges.com/openam/oauth2"}}}},{"comparison":{"left":{"attribute":{"id":"906145d2-15d2-43b5-968a-375d13d907d2"}},"op":"Equals","right":{"constant":{"value":"SalesforceClient"}}}},{"comparison":{"left":{"attribute":{"id":"447bf9bf-0cf0-4b62-9b55-58fc9f606f49"}},"op":"Contains","right":{"constant":{"value":"read_accounts"}}}},{"comparison":{"left":{"attribute":{"id":"13d72706-16cb-4f14-8871-f63c72dcbe11"}},"op":"Equals","right":{"attribute":{"id":"907db9e4-2586-486b-aefb-17ddc642e475"}}}},{"comparison":{"left":{"attribute":{"id":"ef032023-b474-4a63-8afe-ae02d7b6a5f9"}},"op":"IsIn","right":{"attribute":{"id":"c1b425d7-a1a4-499f-9917-1d715a84c817"}}}}]}},"effectSettings":{"type":"unconditionalPermit"},"targets":[],"statements":[],"properties":[]},{"id":"24612b06-f73f-4564-a076-451281fac287","version":"6a889c23-d890-4bca-ba30-9f7eb656a1c5","type":"Policy","name":"ProviderAPI","description":"","shared":false,"disabled":false,"combiningAlgorithm":{"algorithm":"DenyUnlessPermit"},"children":[{"id":"02938580-6f18-40b1-af7b-e6408ad88e7a","type":"Rule"}],"repetitionSettings":null,"permissions":{"inherit":true,"rolePermissions":[]},"condition":{"empty":{}},"targets":["ca9c5cc4-a666-4ed8-8775-48ee891e8db6"],"statements":[],"properties":[]},{"id":"e51688ff-1dc9-4b6c-bb36-8af64d02e9d1","version":"905818ae-a23d-4c60-af04-cae46e83d081","type":"PolicySet","name":"Global Decision Point","description":"","shared":false,"disabled":false,"combiningAlgorithm":{"algorithm":"DenyOverrides"},"children":[{"id":"24612b06-f73f-4564-a076-451281fac287","type":"Policy"}],"permissions":{"inherit":true,"rolePermissions":[]},"condition":{"empty":{}},"targets":[],"statements":[],"properties":[]},{"type":"SnapshotPackageFile$PackageSeparator"},{"type":"SnapshotPackageFile$EndOfPackage"},{"@class":"DataStreamFooter","digest":"9k8KzV8eSUiGHmzFvU39jx4IYa187PghJkMqA3nUw3c="}]
+[
+  {
+    "@class": "DataStreamHeader",
+    "kind": "SnapshotHeader",
+    "version": 4
+  },
+  {
+    "type": "SnapshotPackageFile$PackageHeader",
+    "snapshotId": "6cf23873-b0a9-4baa-901b-3d306d7995e7",
+    "snapshotFileVersion": 4,
+    "applicationVersion": "10.2.0.0"
+  },
+  {
+    "objectType": "ServiceDefinition",
+    "id": "4db6bf0e-ea08-46f4-ad2b-7ee5b9b02a14",
+    "version": "d1e494d0-256a-4a03-a4b8-9524dc89a73b",
+    "type": "SERVICE",
+    "name": "OpenBanking Account and Transaction API",
+    "fullName": "OpenBanking Account and Transaction API",
+    "description": "",
+    "parentId": null,
+    "numberOfChildren": 1,
+    "valueType": "STRING",
+    "serviceType": "NONE",
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "serviceSettings": {
+      "serviceSettingsType": "ServiceSettings",
+      "maximumConcurrentRequests": 2,
+      "maximumRequestsPerSecond": 1000000,
+      "retryStrategy": "BACKOFF",
+      "timeout": 2000,
+      "retries": 2,
+      "holdoff": 1000,
+      "retryJitter": 10,
+      "description": null,
+      "holdoffMultiplier": 2,
+      "definitions": []
+    },
+    "cacheSettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "ServiceDefinition",
+    "id": "86be82b6-ed91-4685-af5d-70a31839583f",
+    "version": "0d04c065-4eda-4931-ae2c-bd54e287d974",
+    "type": "SERVICE",
+    "name": "AccountRequest",
+    "fullName": "OpenBanking Account and Transaction API.AccountRequest",
+    "description": "",
+    "parentId": "4db6bf0e-ea08-46f4-ad2b-7ee5b9b02a14",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "serviceType": "NONE",
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "serviceSettings": {
+      "serviceSettingsType": "ServiceSettings",
+      "maximumConcurrentRequests": 2,
+      "maximumRequestsPerSecond": 1000000,
+      "retryStrategy": "BACKOFF",
+      "timeout": 2000,
+      "retries": 2,
+      "holdoff": 1000,
+      "retryJitter": 10,
+      "description": null,
+      "holdoffMultiplier": 2,
+      "definitions": []
+    },
+    "cacheSettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "ServiceDefinition",
+    "id": "25769e5c-5b33-4daf-9780-3e09b6f32207",
+    "version": "a2adab37-028b-43c4-916a-188cd8381f41",
+    "type": "SERVICE",
+    "name": "PDP",
+    "fullName": "PDP",
+    "description": "PDP API endpoint service",
+    "parentId": null,
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "serviceType": "NONE",
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "serviceSettings": {
+      "serviceSettingsType": "ServiceSettings",
+      "maximumConcurrentRequests": 2,
+      "maximumRequestsPerSecond": 1000000,
+      "retryStrategy": "BACKOFF",
+      "timeout": 2000,
+      "retries": 2,
+      "holdoff": 1000,
+      "retryJitter": 10,
+      "description": null,
+      "holdoffMultiplier": 2,
+      "definitions": []
+    },
+    "cacheSettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "ServiceDefinition",
+    "id": "614bea3a-6fcf-4f73-9c4d-5609e5f9ea1a",
+    "version": "69a32d44-5b18-40b6-82b1-e798c7890fd9",
+    "type": "SERVICE",
+    "name": "ProviderAPI",
+    "fullName": "ProviderAPI",
+    "description": "",
+    "parentId": null,
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "serviceType": "NONE",
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "serviceSettings": {
+      "serviceSettingsType": "ServiceSettings",
+      "maximumConcurrentRequests": 2,
+      "maximumRequestsPerSecond": 1000000,
+      "retryStrategy": "BACKOFF",
+      "timeout": 2000,
+      "retries": 2,
+      "holdoff": 1000,
+      "retryJitter": 10,
+      "description": null,
+      "holdoffMultiplier": 2,
+      "definitions": []
+    },
+    "cacheSettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "ServiceDefinition",
+    "id": "c0cd2d08-7219-4ef3-a2ec-e869a4920cef",
+    "version": "2d4dcaf8-b9cb-4f2c-8866-f6dd2a72c1d3",
+    "type": "SERVICE",
+    "name": "SCIM2",
+    "fullName": "SCIM2",
+    "description": "SCIM 2 REST API",
+    "parentId": null,
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "serviceType": "NONE",
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "serviceSettings": {
+      "serviceSettingsType": "ServiceSettings",
+      "maximumConcurrentRequests": 2,
+      "maximumRequestsPerSecond": 1000000,
+      "retryStrategy": "BACKOFF",
+      "timeout": 2000,
+      "retries": 2,
+      "holdoff": 1000,
+      "retryJitter": 10,
+      "description": null,
+      "holdoffMultiplier": 2,
+      "definitions": []
+    },
+    "cacheSettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "48cbff9b-53dd-429b-9e67-12daed81ec7f",
+    "version": "05c5b3d4-3db5-4373-82cb-eda5e454f0f7",
+    "type": "ATTRIBUTE",
+    "name": "Gateway",
+    "fullName": "Gateway",
+    "description": "Policy attributes specific to the Data Governance gateway.",
+    "parentId": null,
+    "numberOfChildren": 2,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "version": "bcd06681-f2fd-4032-bf95-18dcee6d1ffb",
+    "type": "ATTRIBUTE",
+    "name": "HttpRequest",
+    "fullName": "HttpRequest",
+    "description": "A JSON object representing the HTTP request.",
+    "parentId": null,
+    "numberOfChildren": 12,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "b98ca4de-5069-47a3-91fd-bb02afd8ccd6",
+    "version": "9c9978ef-0547-4ce6-a73c-f1b6a06af77d",
+    "type": "ATTRIBUTE",
+    "name": "impactedAttributes",
+    "fullName": "impactedAttributes",
+    "description": "",
+    "parentId": null,
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": "[]",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "6a922d6c-8173-4b75-aa5a-99ff2ccafc64",
+    "version": "1b13d762-0bed-4060-9716-8f503b81dc5c",
+    "type": "ATTRIBUTE",
+    "name": "PatientRecord",
+    "fullName": "PatientRecord",
+    "description": "",
+    "parentId": null,
+    "numberOfChildren": 2,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "08700cc6-a3ed-4814-9f78-2fd62f1f3d55",
+    "version": "a6356111-3214-481b-9b80-b66ec3ae30d3",
+    "type": "ATTRIBUTE",
+    "name": "SCIM2",
+    "fullName": "SCIM2",
+    "description": "Policy attributes specific to the Data Governance SCIM2 REST API.",
+    "parentId": null,
+    "numberOfChildren": 2,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "3577dd53-a71a-4ce8-ab40-c9c083c7c5b9",
+    "version": "66cf9789-0e96-463f-9ecd-4dcd58f7f461",
+    "type": "ATTRIBUTE",
+    "name": "TokenOwner",
+    "fullName": "TokenOwner",
+    "description": "If the request is authorized with a user access token, this is a JSON object representing the authenticated user that owns the access token.   Will not be present for client-credentials access tokens.  The fields of this JSON object depend upon the schema defined for the user record.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "request",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": null,
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "5c34b551-1dc4-4605-999b-6f1ec2bbe526",
+    "version": "5d06827d-ef3b-4ef1-9ed6-f888e17164a3",
+    "type": "ACTION",
+    "name": "authorize",
+    "fullName": "authorize",
+    "description": "Action used to authorize PDP API endpoint clients.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "cbbf13bf-0827-4d23-accc-190fb633b908",
+    "version": "2b97802e-7b4a-4e05-913a-bdf4808d32b3",
+    "type": "ACTION",
+    "name": "create",
+    "fullName": "create",
+    "description": "Action used to authorize SCIM operations that create a new resource.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "4a681458-0582-4228-8eea-d563b3b5eba4",
+    "version": "5c8c249b-cae7-4328-8229-6b2d9748d2fd",
+    "type": "ACTION",
+    "name": "delete",
+    "fullName": "delete",
+    "description": "Action used to authorize SCIM operations that delete a resource.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "722a87ec-fdd4-4c34-85e3-b2f58525c0c3",
+    "version": "d01d7176-23c1-4b27-a396-afe1d58cd937",
+    "type": "ACTION",
+    "name": "inbound-DELETE",
+    "fullName": "inbound-DELETE",
+    "description": "Action used when authorizing HTTP DELETE requests.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "b357623b-15da-4781-b772-ed64a89aeabb",
+    "version": "63f7cdce-d42c-4ed6-b6aa-66be2e4c8956",
+    "type": "ACTION",
+    "name": "inbound-GET",
+    "fullName": "inbound-GET",
+    "description": "Action used to authorize HTTP GET requests.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "51123a74-7067-4e61-a75b-e95cf0ddb357",
+    "version": "a29eaa98-32ab-4c7a-80ca-031e15dd4e5e",
+    "type": "ACTION",
+    "name": "inbound-PATCH",
+    "fullName": "inbound-PATCH",
+    "description": "Action used to authorize HTTP PATCH requests.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "b072d76e-0085-4423-99c2-4e16b74e88fa",
+    "version": "f707a03c-e2ca-4c93-b225-d647d460a2d6",
+    "type": "ACTION",
+    "name": "inbound-POST",
+    "fullName": "inbound-POST",
+    "description": "Action used to authorize HTTP POST requests.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "c5a7e47c-ccd1-4aba-8d43-7f92c17cbf33",
+    "version": "28ed6588-7b08-400f-84e2-ea9964835192",
+    "type": "ACTION",
+    "name": "inbound-PUT",
+    "fullName": "inbound-PUT",
+    "description": "Action used to authorize HTTP PUT requests.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "0338888f-fd67-45d1-9ebd-db4457a6bc09",
+    "version": "99b54d53-8993-4b80-9eed-5de68ac63f5a",
+    "type": "ACTION",
+    "name": "modify",
+    "fullName": "modify",
+    "description": "Action used to authorize SCIM operations that modify a resource, including both PUT and PATCH operations.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "4941d2a4-2c49-4ebb-9292-f3cccd0b8027",
+    "version": "c76562d7-823c-4f27-84f2-6c5530eae6e6",
+    "type": "ACTION",
+    "name": "outbound-DELETE",
+    "fullName": "outbound-DELETE",
+    "description": "Action used for authorizing HTTP DELETE responses.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6",
+    "version": "d26ef66c-5526-4d33-a74a-4b4e4d0198ea",
+    "type": "ACTION",
+    "name": "outbound-GET",
+    "fullName": "outbound-GET",
+    "description": "Action used to authorize HTTP GET responses.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "b893b33d-6c0c-402b-847c-84962fbc7f4d",
+    "version": "aa8e4f01-c983-4e5a-9cf6-c341f7cad393",
+    "type": "ACTION",
+    "name": "outbound-PATCH",
+    "fullName": "outbound-PATCH",
+    "description": "Action used to authorize HTTP PATCH responses.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "f738086a-7cb5-4cc7-8451-6bc49a6092f0",
+    "version": "4213b6b1-e26e-4113-81e5-5610c41d3e24",
+    "type": "ACTION",
+    "name": "outbound-POST",
+    "fullName": "outbound-POST",
+    "description": "Action used to authorize HTTP POST responses.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "94d795a8-7454-4a44-9b55-bbf04fc16bcb",
+    "version": "259d8e46-78e5-40de-a5d1-185b699c2465",
+    "type": "ACTION",
+    "name": "outbound-PUT",
+    "fullName": "outbound-PUT",
+    "description": "Action used to authorize HTTP PUT responses.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "9592ecbc-68c4-4d1a-980a-eeb6a3b4c209",
+    "version": "d70fa6df-c69d-4dcf-94c1-7507a78d6d4d",
+    "type": "ACTION",
+    "name": "retrieve",
+    "fullName": "retrieve",
+    "description": "Action used to authorize SCIM operations that return a resource to the client.   This action is used for SCIM GET operations as well as for authorizing responses from SCIM POST, PATCH, and PUT.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "44da9abd-3299-45b2-bc23-7e76ecfde490",
+    "version": "52994299-e41a-464c-ab83-b34e6f8cac68",
+    "type": "ACTION",
+    "name": "search",
+    "fullName": "search",
+    "description": "Action used to authorize a SCIM search operation before the search is performed. Advice may modify the SCIM search filter or set the policy processing mode.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ActionDefinition",
+    "id": "b3ad7d85-cdad-4bb6-a67f-47d09d62913f",
+    "version": "ba7a0633-5cd5-495c-bff9-69e5c080e5dc",
+    "type": "ACTION",
+    "name": "search-results",
+    "fullName": "search-results",
+    "description": "Action used to authorize SCIM search results in a single policy operation. Only used if an alternate policy processing mode was selected using the combine-scim-search-authorizations advice.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "36f58f26-b912-4322-920d-2a4b1e3f1a08",
+    "version": "3ee72dfc-d9c9-40ae-922e-01a7b9fd702c",
+    "type": "ATTRIBUTE",
+    "name": "BasePath",
+    "fullName": "Gateway.BasePath",
+    "description": "The portion of the HTTP request URI that matches the API Endpoint's inbound-base-path value.",
+    "parentId": "48cbff9b-53dd-429b-9e67-12daed81ec7f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "48cbff9b-53dd-429b-9e67-12daed81ec7f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "_BasePath",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "585de1ab-8282-454b-85de-43853e88c6bd",
+    "version": "fd9bdc07-77b3-491b-9b24-0aa5d47ebc92",
+    "type": "ATTRIBUTE",
+    "name": "TrailingPath",
+    "fullName": "Gateway.TrailingPath",
+    "description": "The portion of the HTTP request URI that follows the _BasePath.",
+    "parentId": "48cbff9b-53dd-429b-9e67-12daed81ec7f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "48cbff9b-53dd-429b-9e67-12daed81ec7f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "_TrailingPath",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "version": "ec038388-a8bc-4df2-b035-880cb07a3303",
+    "type": "ATTRIBUTE",
+    "name": "AccessToken",
+    "fullName": "HttpRequest.AccessToken",
+    "description": "JSON object representing the decoded access token that was passed from the client to authorize the current HTTP request.   Most fields of the access token are consistent with those defined by RFC 7519, JSON Web Token, and/or RFC 7662, OAuth 2.0 Token Introspection.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": 15,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "AccessToken",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "version": "8647afaa-b772-4d2b-a06e-d7a2b6c919f5",
+    "type": "ATTRIBUTE",
+    "name": "ClientCertificate",
+    "fullName": "HttpRequest.ClientCertificate",
+    "description": "",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": 7,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "ClientCertificate",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "08f8bef7-fc93-485d-aa25-395be62a3e8a",
+    "version": "fa6df12f-72cb-40ed-ae95-ead899abf908",
+    "type": "ATTRIBUTE",
+    "name": "CorrelationId",
+    "fullName": "HttpRequest.CorrelationId",
+    "description": "A unique identifier attached to a request/response pair by the DataGovernance Server.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "CorrelationId",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "4d1cabb6-692d-45f1-8c25-7443163c3be6",
+    "version": "925eb2d0-be66-40fd-bf0b-42f2fce086e2",
+    "type": "ATTRIBUTE",
+    "name": "Headers",
+    "fullName": "HttpRequest.Headers",
+    "description": "A JSON object representing the HTTP headers that were passed with the client's HTTP request.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).\n\nThis attribute is deprecated and has been replaced by the RequestHeaders attribute.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "Headers",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "e9098367-467a-436f-96ed-0e4c0621ca95",
+    "version": "5780f149-92ce-4064-859a-5cd7af64f93e",
+    "type": "ATTRIBUTE",
+    "name": "QueryParameters",
+    "fullName": "HttpRequest.QueryParameters",
+    "description": "A JSON object representing the query parameters, if any, that were passed with the client's HTTP request.   Each field in the object represents a parameter name, and the value of each field is a JSON array representing the parameter value(s).",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "QueryParameters",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "4e210505-eb7a-428b-b948-1d7e9538ca34",
+    "version": "b0f23586-aaa3-430b-ad98-4cea1697165e",
+    "type": "ATTRIBUTE",
+    "name": "RequestBody",
+    "fullName": "HttpRequest.RequestBody",
+    "description": "For POST, PUT, and PATCH operations, this attribute will contain the JSON body of the HTTP request.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "RequestBody",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "f6f0e407-f383-4e32-9d36-e5c5f822b853",
+    "version": "dfb3b5b8-9ad7-4b7c-ab4a-94c8e79b4687",
+    "type": "ATTRIBUTE",
+    "name": "RequestHeaders",
+    "fullName": "HttpRequest.RequestHeaders",
+    "description": "A JSON object representing the HTTP headers that were passed with the client's HTTP request.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "RequestHeaders",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "618d0e40-6e74-4370-b896-7c114011667a",
+    "version": "89f19a2e-5f0e-44e2-91e2-9074451321e1",
+    "type": "ATTRIBUTE",
+    "name": "RequestURI",
+    "fullName": "HttpRequest.RequestURI",
+    "description": "The complete HTTP request URI.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "RequestURI",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "70f94c27-358f-4a20-a968-43799acd3d1b",
+    "version": "7e173420-628f-49c2-a7ff-b6822df166e3",
+    "type": "ATTRIBUTE",
+    "name": "ResourcePath",
+    "fullName": "HttpRequest.ResourcePath",
+    "description": "The path of the requested resource, relative to the base URI of the Data Governance endpoint that is processing the request.  For a SCIM request, an example path would be \"Users/abcdef\".",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": 1,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "ResourcePath",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "2139c312-6f7d-49ff-8d00-c48231ed8f19",
+    "version": "ea4180ee-8bf0-40b2-9ca4-464c61872220",
+    "type": "ATTRIBUTE",
+    "name": "ResponseBody",
+    "fullName": "HttpRequest.ResponseBody",
+    "description": "The body of the HTTP response, before it is returned to a client application.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": "{}",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "ResponseBody",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "34b6d4a1-e25f-4c68-a36c-d0a3010e20dc",
+    "version": "0bb037fe-b481-4ed8-820d-42838f8739b8",
+    "type": "ATTRIBUTE",
+    "name": "ResponseHeaders",
+    "fullName": "HttpRequest.ResponseHeaders",
+    "description": "A JSON object representing the HTTP headers that were passed with the API server's HTTP response.   Each field in the object represents a header name, and the value of each field is a JSON array representing the header value(s).",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "ResponseHeaders",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "7b017331-88bd-4a50-bbf0-285801d2f393",
+    "version": "27b16e4e-6b24-44e3-b99b-0060b63ab904",
+    "type": "ATTRIBUTE",
+    "name": "ResponseStatus",
+    "fullName": "HttpRequest.ResponseStatus",
+    "description": "The HTTP status code of a response returned from an API server, such as 200 or 404.",
+    "parentId": "a007b39b-33ca-436c-977f-21a4831daa96",
+    "numberOfChildren": null,
+    "valueType": "NUMBER",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "a007b39b-33ca-436c-977f-21a4831daa96",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "ResponseStatus",
+      "valueType": "NUMBER",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "273fe456-03de-474d-8eb2-2a9fefc96325",
+    "version": "d29d0a56-efcc-4f51-b1ec-c70560aa4247",
+    "type": "ATTRIBUTE",
+    "name": "modifications",
+    "fullName": "SCIM2.modifications",
+    "description": "For requests with action 'modify' (i.e., PUT or PATCH requests), contains the set of changes to be made. This object uses a normalized form of the SCIM 2 PATCH request format, as described by RFC 7644, section 3.5.2. ",
+    "parentId": "08700cc6-a3ed-4814-9f78-2fd62f1f3d55",
+    "numberOfChildren": 4,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "08700cc6-a3ed-4814-9f78-2fd62f1f3d55",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "modifications",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+    "version": "734d4c1d-6f77-4658-8a33-e5451bf85a23",
+    "type": "ATTRIBUTE",
+    "name": "resource",
+    "fullName": "SCIM2.resource",
+    "description": "Contains the SCIM 2 resource targeted by the current request. Not available if the current action is 'create' (POST).",
+    "parentId": "08700cc6-a3ed-4814-9f78-2fd62f1f3d55",
+    "numberOfChildren": 3,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "08700cc6-a3ed-4814-9f78-2fd62f1f3d55",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "resource",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ConditionDefinition",
+    "id": "cd212c60-6cf3-4156-9c17-a32162fdda6a",
+    "version": "49c2de08-3a4b-4d87-8f9f-5672be518294",
+    "type": "CONDITION",
+    "name": "Any Inbound Request",
+    "fullName": "Any Inbound Request",
+    "description": "Matches requests with inbound REST actions.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "condition": {
+      "or": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "722a87ec-fdd4-4c34-85e3-b2f58525c0c3"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "b357623b-15da-4781-b772-ed64a89aeabb"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "51123a74-7067-4e61-a75b-e95cf0ddb357"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "b072d76e-0085-4423-99c2-4e16b74e88fa"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "c5a7e47c-ccd1-4aba-8d43-7f92c17cbf33"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ConditionDefinition",
+    "id": "3ca55ccd-cf36-4e24-be42-5eb4d54e6466",
+    "version": "835be5e3-cdd8-4e5d-ab9a-3ad1f2cb4671",
+    "type": "CONDITION",
+    "name": "Any Outbound Request",
+    "fullName": "Any Outbound Request",
+    "description": "Matches requests with outbound REST actions.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "condition": {
+      "or": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "4941d2a4-2c49-4ebb-9292-f3cccd0b8027"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "b893b33d-6c0c-402b-847c-84962fbc7f4d"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "f738086a-7cb5-4cc7-8451-6bc49a6092f0"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "94d795a8-7454-4a44-9b55-bbf04fc16bcb"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "ConditionDefinition",
+    "id": "5d9208da-b746-4b0d-b741-b6eabc66e71c",
+    "version": "d16616ed-7c91-4dc0-80a3-ab45bdef15e6",
+    "type": "CONDITION",
+    "name": "Any SCIM or OpenBanking Request",
+    "fullName": "Any SCIM or OpenBanking Request",
+    "description": "Matches requests with SCIM or OpenBanking actions.",
+    "parentId": null,
+    "numberOfChildren": null,
+    "condition": {
+      "or": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "cbbf13bf-0827-4d23-accc-190fb633b908"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "4a681458-0582-4228-8eea-d563b3b5eba4"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "0338888f-fd67-45d1-9ebd-db4457a6bc09"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "9592ecbc-68c4-4d1a-980a-eeb6a3b4c209"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "requestAxis": {
+                  "type": "ACTION"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "definition": {
+                  "id": "44da9abd-3299-45b2-bc23-7e76ecfde490"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "9d722951-77a8-4ae6-94f9-6ced4adfee17",
+    "version": "3c00c6ab-b069-422a-bc7d-270504f6c871",
+    "type": "ATTRIBUTE",
+    "name": "active",
+    "fullName": "HttpRequest.AccessToken.active",
+    "description": "Whether this access token is currently active, as determined by the access token validator of the Policy Enforcement Point.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "BOOLEAN",
+    "defaultValue": "false",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "$.active",
+      "valueType": "BOOLEAN",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "c1b425d7-a1a4-499f-9917-1d715a84c817",
+    "version": "f493e8c2-1ccc-49e1-aeb2-ca6208394b6c",
+    "type": "ATTRIBUTE",
+    "name": "actor_subject",
+    "fullName": "HttpRequest.AccessToken.actor_subject",
+    "description": "",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": ".act.sub",
+      "valueType": "STRING",
+      "name": ""
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "906145d2-15d2-43b5-968a-375d13d907d2",
+    "version": "75f74c30-f4dd-44d1-be29-150becb95a1c",
+    "type": "ATTRIBUTE",
+    "name": "audience",
+    "fullName": "HttpRequest.AccessToken.audience",
+    "description": "Identifies the recipient(s) that the access token is intended for.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": "[]",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "aud",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "4dd3a38e-39c6-44aa-99d7-106eb4e2b860",
+    "version": "968981a3-b9f3-4320-9a62-930a5a98b811",
+    "type": "ATTRIBUTE",
+    "name": "client_id",
+    "fullName": "HttpRequest.AccessToken.client_id",
+    "description": "The client identifier of the client application that requested this token.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "client_id",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "0e206ccc-c44d-4a56-a0ed-02698df6a3d7",
+    "version": "13dcf1ac-fc02-48b5-b147-054ccf2ca2f4",
+    "type": "ATTRIBUTE",
+    "name": "expiration",
+    "fullName": "HttpRequest.AccessToken.expiration",
+    "description": "The date and time at which the access token will expire.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "DATE_TIME",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "exp",
+      "valueType": "DATE_TIME",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "bbebabe1-0bb4-4800-a35c-bb5f5ace9ded",
+    "version": "f9a229ea-08cb-4f98-b860-4a61292d00cc",
+    "type": "ATTRIBUTE",
+    "name": "issued_at",
+    "fullName": "HttpRequest.AccessToken.issued_at",
+    "description": "The date and time at which this access token was issued.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "DATE_TIME",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "iat",
+      "valueType": "DATE_TIME",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "2e483fd0-8032-4542-86b8-ed54d7c327d4",
+    "version": "738c3a66-ba46-47a2-b0d9-4857a1e7fa3e",
+    "type": "ATTRIBUTE",
+    "name": "issuer",
+    "fullName": "HttpRequest.AccessToken.issuer",
+    "description": "A string identifying the issuer of this access token.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "iss",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "3e5191dd-bb0e-4e0f-889c-6601e0e0c4ee",
+    "version": "c7289bae-6cff-4ec7-b799-e1d2894fc39c",
+    "type": "ATTRIBUTE",
+    "name": "not_before",
+    "fullName": "HttpRequest.AccessToken.not_before",
+    "description": "The date and time before which the access token must not be accepted for processing.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "DATE_TIME",
+    "defaultValue": "PT0H0M0S",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "nbf",
+      "valueType": "DATE_TIME",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "447bf9bf-0cf0-4b62-9b55-58fc9f606f49",
+    "version": "7e500219-9cb8-49df-b49d-bb514c867e25",
+    "type": "ATTRIBUTE",
+    "name": "scope",
+    "fullName": "HttpRequest.AccessToken.scope",
+    "description": "The list of scopes granted to this token.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": "[]",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "scope",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "ee41314a-eb03-4a6e-9561-82ff8dd13865",
+    "version": "7e6bf31e-1e52-41b3-b981-188bf85b4adf",
+    "type": "ATTRIBUTE",
+    "name": "subject",
+    "fullName": "HttpRequest.AccessToken.subject",
+    "description": "The subject of the token. This will be a user identifier as set by the authorization server that issued the token.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "sub",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "907db9e4-2586-486b-aefb-17ddc642e475",
+    "version": "69d787a0-dc36-4c43-8841-f58c135e994e",
+    "type": "ATTRIBUTE",
+    "name": "subname",
+    "fullName": "HttpRequest.AccessToken.subname",
+    "description": "Human-readable identifier for the end-user principal who authorized this token.   Not present for client credentials tokens.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "subname",
+      "valueType": "STRING",
+      "name": ""
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "e8c5981b-fed8-4c44-b4aa-baf4dccdb166",
+    "version": "ff9da6de-cba6-46cd-b457-e8726a491f7e",
+    "type": "ATTRIBUTE",
+    "name": "token_owner",
+    "fullName": "HttpRequest.AccessToken.token_owner",
+    "description": "Identifies the principal (end-user) that was mapped from the access token subject.  This will be a user identifier as determined by the Data Governance Server's access token validator. For SCIM users, this will be of the form <Resource Type>/<SCIM Id>, e.g. \"Users/abcdef\".",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "token_owner",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "bbb885f0-d289-4715-aeb2-d02f3bf6a756",
+    "version": "0f906e06-4a03-4e3d-bba5-9377fb3c4988",
+    "type": "ATTRIBUTE",
+    "name": "token_type",
+    "fullName": "HttpRequest.AccessToken.token_type",
+    "description": "Type of the token as defined in Section 5.1 of OAuth 2.0 [RFC6749].",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "token_type",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "c991b61d-d41d-451c-9759-b06686b3f459",
+    "version": "e8caebd5-5654-46b4-a61f-d936b9901f96",
+    "type": "ATTRIBUTE",
+    "name": "user_token",
+    "fullName": "HttpRequest.AccessToken.user_token",
+    "description": "Whether this token was issued on behalf of a user. If false, then this token was issued to a client and does not have a specific user as its subject.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "BOOLEAN",
+    "defaultValue": "false",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "user_token",
+      "valueType": "BOOLEAN",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "7602b001-96d1-459d-b122-30abbb48886d",
+    "version": "c742f351-83e7-422d-99b0-d3e3a9b44df2",
+    "type": "ATTRIBUTE",
+    "name": "username",
+    "fullName": "HttpRequest.AccessToken.username",
+    "description": "Human-readable identifier for the end-user principal who authorized this token.   Not present for client credentials tokens.",
+    "parentId": "8e568465-2e7c-4705-8d94-53102ea8550f",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "8e568465-2e7c-4705-8d94-53102ea8550f",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "username",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "d930c3ee-77ca-4cb8-b0ad-e521c556e961",
+    "version": "9d599eb3-92a7-4346-bd6a-fd31865e91fb",
+    "type": "ATTRIBUTE",
+    "name": "algorithm",
+    "fullName": "HttpRequest.ClientCertificate.algorithm",
+    "description": "The name of the certificate signature algorithm.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "algorithm",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "34f4b267-949e-4778-b0ea-0df1ed32f4e0",
+    "version": "30bf43b6-9174-4d25-b2f4-adb1f52136f3",
+    "type": "ATTRIBUTE",
+    "name": "issuer",
+    "fullName": "HttpRequest.ClientCertificate.issuer",
+    "description": "The issuer X.500 Principal.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "issuer",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "15d98d87-9225-4451-9283-b23a3c199f32",
+    "version": "adbb884f-9006-4005-a305-41fb46ceec17",
+    "type": "ATTRIBUTE",
+    "name": "notAfter",
+    "fullName": "HttpRequest.ClientCertificate.notAfter",
+    "description": "Expiration date/time of the certificate.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "DATE_TIME",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "notAfter",
+      "valueType": "DATE_TIME",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "ce2415d3-2f52-4184-9d6a-7b4f7c1dc55a",
+    "version": "f297ee59-ec6d-4dde-b274-aa7090e0ce3b",
+    "type": "ATTRIBUTE",
+    "name": "notBefore",
+    "fullName": "HttpRequest.ClientCertificate.notBefore",
+    "description": "The earliest date on which this certificate should be considered valid.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "DATE_TIME",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "notBefore",
+      "valueType": "DATE_TIME",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "431562c1-3e57-4d79-bacd-532f6af7fba7",
+    "version": "eb0330c2-5a1a-42fb-adab-2f942af1721c",
+    "type": "ATTRIBUTE",
+    "name": "subject",
+    "fullName": "HttpRequest.ClientCertificate.subject",
+    "description": "The subject X500 Principal.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "subject",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "3ca7193a-f48a-48b2-b66b-74572d8d0605",
+    "version": "5e44f36d-b5b7-4397-9fdd-ef9f6d702fa8",
+    "type": "ATTRIBUTE",
+    "name": "valid",
+    "fullName": "HttpRequest.ClientCertificate.valid",
+    "description": "Whether the client SSL certificate is valid.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "BOOLEAN",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "094ac83f-2d28-4065-8650-56f30e246abc",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "valid",
+      "valueType": "BOOLEAN",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "354ae71a-f26d-4449-aa8b-f203c1e92d08",
+    "version": "ced1f42a-6d08-4ab7-94a6-a78c20f2b17b",
+    "type": "ATTRIBUTE",
+    "name": "leaf",
+    "fullName": "HttpRequest.ResourcePath.leaf",
+    "description": "The leaf segment of the Resource URI.",
+    "parentId": "70f94c27-358f-4a20-a968-43799acd3d1b",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "70f94c27-358f-4a20-a968-43799acd3d1b",
+        "condition": null,
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "spel",
+      "expression": "substring(lastIndexOf('/') + 1)",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "ef032023-b474-4a63-8afe-ae02d7b6a5f9",
+    "version": "70a5314b-f642-470e-bb0c-118757c55100",
+    "type": "ATTRIBUTE",
+    "name": "Patient Doctor",
+    "fullName": "PatientRecord.Patient Doctor",
+    "description": "",
+    "parentId": "6a922d6c-8173-4b75-aa5a-99ff2ccafc64",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "2139c312-6f7d-49ff-8d00-c48231ed8f19",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "$.doctor",
+      "valueType": "STRING",
+      "name": ""
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "13d72706-16cb-4f14-8871-f63c72dcbe11",
+    "version": "3f94d026-0892-4729-bf41-be5f3101d78e",
+    "type": "ATTRIBUTE",
+    "name": "Patient Record Owner",
+    "fullName": "PatientRecord.Patient Record Owner",
+    "description": "",
+    "parentId": "6a922d6c-8173-4b75-aa5a-99ff2ccafc64",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "2139c312-6f7d-49ff-8d00-c48231ed8f19",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": ""
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "$.patient",
+      "valueType": "STRING",
+      "name": ""
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "f7cba870-58ea-45e8-a7b1-5882b83e8aa0",
+    "version": "76a12df4-6145-4d64-a5c4-2c92b7f72953",
+    "type": "ATTRIBUTE",
+    "name": "attributesToAdd",
+    "fullName": "SCIM2.modifications.attributesToAdd",
+    "description": "Returns a collection of all attributes that will be added.",
+    "parentId": "273fe456-03de-474d-8eb2-2a9fefc96325",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "273fe456-03de-474d-8eb2-2a9fefc96325",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "Operations[?(@.op==\"add\")].path",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "3a45b0f0-4a52-4326-953b-aa6ea16f6e9e",
+    "version": "632ea36c-d1cd-42cc-afb0-e97d1b1f0d53",
+    "type": "ATTRIBUTE",
+    "name": "attributesToModify",
+    "fullName": "SCIM2.modifications.attributesToModify",
+    "description": "Returns a collection of all attributes that will be modified in any way.",
+    "parentId": "273fe456-03de-474d-8eb2-2a9fefc96325",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "273fe456-03de-474d-8eb2-2a9fefc96325",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "Operations[*].path",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "79f33fc8-abc7-45d0-9031-af5275629777",
+    "version": "687c4b27-bb1a-4b54-82c9-d929f5afe1a2",
+    "type": "ATTRIBUTE",
+    "name": "attributesToRemove",
+    "fullName": "SCIM2.modifications.attributesToRemove",
+    "description": "Returns a collection of all attributes to be removed.",
+    "parentId": "273fe456-03de-474d-8eb2-2a9fefc96325",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "273fe456-03de-474d-8eb2-2a9fefc96325",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "Operations[?(@.op==\"remove\")].path",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "260162bf-f7c1-406e-ab88-b2f8eeead0f4",
+    "version": "401e930b-4682-4415-a69c-4e11a2fb6a91",
+    "type": "ATTRIBUTE",
+    "name": "attributesToReplace",
+    "fullName": "SCIM2.modifications.attributesToReplace",
+    "description": "Returns a collection of all attributes to be replaced.",
+    "parentId": "273fe456-03de-474d-8eb2-2a9fefc96325",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "273fe456-03de-474d-8eb2-2a9fefc96325",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "Operations[?(@.op==\"replace\")].path",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "e55d9ec6-3d06-4c09-abeb-c46998cec217",
+    "version": "0f2a97b8-50b2-41b5-bcf7-901a01e12461",
+    "type": "ATTRIBUTE",
+    "name": "id",
+    "fullName": "SCIM2.resource.id",
+    "description": "The SCIM resource's unique identifier.",
+    "parentId": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "id",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "142b703d-de8c-4dfe-8596-1abc72cc6d5e",
+    "version": "979dbab8-36bc-4621-ba1e-688745562cfb",
+    "type": "ATTRIBUTE",
+    "name": "meta",
+    "fullName": "SCIM2.resource.meta",
+    "description": "An object containing metadata about the SCIM resource.",
+    "parentId": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+    "numberOfChildren": 1,
+    "valueType": "JSON",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "meta",
+      "valueType": "JSON",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "e6e03b5b-5fb4-4afa-a9d3-651016b97ca9",
+    "version": "32ba2043-e83c-405d-a9c4-a4deda1b0064",
+    "type": "ATTRIBUTE",
+    "name": "schemas",
+    "fullName": "SCIM2.resource.schemas",
+    "description": "The set of schemas used by the SCIM resource.",
+    "parentId": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+    "numberOfChildren": null,
+    "valueType": "COLLECTION",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "4a8865a9-3e63-4598-bfe5-0f24d8c8efba",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "schemas",
+      "valueType": "COLLECTION",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "99b7905c-1200-4cf8-9c31-29b13c61344c",
+    "version": "5ccd5b23-1ee0-4e47-a0c0-efc5463c46fa",
+    "type": "ATTRIBUTE",
+    "name": "subjectRegex",
+    "fullName": "HttpRequest.ClientCertificate.subjectRegex",
+    "description": "Regular expression that must be matched by the subject field of the certificate in order to ensure that the certificate belongs to the requesting client.",
+    "parentId": "094ac83f-2d28-4065-8650-56f30e246abc",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": "_null",
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "spel",
+      "expression": "\"^CN={{4dd3a38e-39c6-44aa-99d7-106eb4e2b860|unsafe}}.*\"",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "objectType": "AttributeDefinition",
+    "id": "99830fbc-e185-4cf0-ad2b-b74a13304490",
+    "version": "9e09a4a5-7fbc-4904-914c-93fd98e105d4",
+    "type": "ATTRIBUTE",
+    "name": "resourceType",
+    "fullName": "SCIM2.resource.meta.resourceType",
+    "description": "The SCIM resource type.",
+    "parentId": "142b703d-de8c-4dfe-8596-1abc72cc6d5e",
+    "numberOfChildren": null,
+    "valueType": "STRING",
+    "defaultValue": null,
+    "repetitionSource": null,
+    "cacheConfig": {
+      "timeToLive": 0,
+      "scopeAttributeId": null,
+      "strategy": "NO_CACHING"
+    },
+    "secret": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "resolvers": [
+      {
+        "attributeResolverType": "attribute",
+        "id": "142b703d-de8c-4dfe-8596-1abc72cc6d5e",
+        "condition": {
+          "empty": {}
+        },
+        "valueProcessor": null,
+        "name": null
+      }
+    ],
+    "querySettings": null,
+    "valueProcessor": {
+      "type": "json-path",
+      "expression": "resourceType",
+      "valueType": "STRING",
+      "name": null
+    },
+    "properties": []
+  },
+  {
+    "type": "SnapshotPackageFile$PackageSeparator"
+  },
+  {
+    "id": "d54fcd1c-3950-4df8-a149-d97ebef43ba3",
+    "version": "05f8abd8-0b3b-4e07-a408-541479962da9",
+    "type": "Statement",
+    "name": "Allow update of all attributes",
+    "description": "Allows a client making a POST, PUT, PATCH request to update any attribute.",
+    "shared": true,
+    "code": "allow-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"*\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "f68dc8f2-87f2-4626-8eda-df4d87a64eeb",
+    "version": "90592857-2814-43dc-b854-f616b3a77d60",
+    "type": "Statement",
+    "name": "Allow update of profile attributes",
+    "description": "Allows a client making a POST, PUT, or PATCH request to update specific user profile attributes. Note that these attributes are schema-specific and may need to be changed to reflect your user schema.",
+    "shared": true,
+    "code": "allow-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"uid\", \"sn\", \"givenName\", \"description\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "1c93ee51-44ec-4ad3-8bee-bc3f58a06b15",
+    "version": "2dc2c71b-41c8-4be8-8b68-826653949737",
+    "type": "Statement",
+    "name": "Exclude private data",
+    "description": "",
+    "shared": false,
+    "code": "exclude-attributes",
+    "appliesTo": "ANYTHING",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"data.private\"]",
+    "obligatory": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "1fc6090f-bae7-457e-87b2-828d97578879",
+    "version": "87cfd4e0-6d14-4e58-843d-2eda2f8660fe",
+    "type": "Statement",
+    "name": "Include all attributes",
+    "description": "Allows a client to read any attribute.",
+    "shared": true,
+    "code": "include-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"*\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "51119f2f-ab5b-4184-8108-53daeceb834f",
+    "version": "2b458e67-c180-4710-830b-88551900ec5a",
+    "type": "Statement",
+    "name": "Include attributes permitted by scope",
+    "description": "",
+    "shared": false,
+    "code": "include-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"CHANGEME\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "9d51f642-74d0-402b-9352-be5c97e16619",
+    "version": "5cd5358a-1478-45fe-9a75-8d35120a47a9",
+    "type": "Statement",
+    "name": "Include email attributes",
+    "description": "Allows to read specific email address attributes. Note that these attributes are schema-specific and may need to be changed to reflect your user schema.",
+    "shared": true,
+    "code": "include-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"mail\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "c5a3b0f7-0094-4c76-9ffe-bbffe99becc8",
+    "version": "8fbd55fc-c13b-4063-acac-582c42df9083",
+    "type": "Statement",
+    "name": "Include profile attributes",
+    "description": "Allows a client to read a set of specific user profile attributes. Note that these attributes are schema-specific and may need to be changed to reflect your user schema.",
+    "shared": true,
+    "code": "include-attributes",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "[\"uid\", \"sn\", \"givenName\", \"description\"]",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "d14656f2-4c95-420d-913d-a67d9bf3e10d",
+    "version": "b91046cf-07f4-4981-b15e-930cbf6fe49d",
+    "type": "Statement",
+    "name": "Insufficient Scope",
+    "description": "For use when a policy denies a request because the bearer token scopes do not authorize the client to access the requested resource.",
+    "shared": true,
+    "code": "denied-reason",
+    "appliesTo": "DENY",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "{\"status\":403, \"message\":\"insufficient_scope\", \"detail\":\"Requested operation not allowed by the granted OAuth scopes.\"}",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "cde26a38-2035-4385-bbfe-159ee1822976",
+    "version": "06346493-1653-4304-989a-b9ec354d8dc6",
+    "type": "Statement",
+    "name": "Invalid Token",
+    "description": "For use when a policy denies a request because the access token is inactive, expired, or otherwise invalid.",
+    "shared": true,
+    "code": "denied-reason",
+    "appliesTo": "DENY",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "{\"status\":401, \"message\": \"invalid_token\", \"detail\":\"Access token is expired or otherwise invalid\"}",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "c0826ae4-8293-4f8c-8a5a-286c5df5cd1f",
+    "version": "b17f8e4e-7ac1-414d-ba87-238ec55fd9f1",
+    "type": "Statement",
+    "name": "Invalid Token",
+    "description": "For use when a policy denies a request because the access token is inactive, expired, or otherwise invalid.",
+    "shared": false,
+    "code": "denied-reason",
+    "appliesTo": "DENY",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "{\"status\":401, \"message\": \"invalid_token\", \"detail\":\"Access token is expired or otherwise invalid\"}",
+    "obligatory": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "eb5d1a2d-1dfb-4318-9fd8-fbe8bec7eb30",
+    "version": "100aa79d-11a5-4526-b9a3-21507811884e",
+    "type": "Statement",
+    "name": "Optimize SCIM searches",
+    "description": "When included in the decision for a SCIM2 policy request with the 'search' action, directs the PingDataGovernance Server to authorize and filter search results using a single policy request with the 'search-results' action. This advice type does not require a payload.",
+    "shared": true,
+    "code": "combine-scim-search-authorizations",
+    "appliesTo": "PERMIT",
+    "appliesIf": "PATH_MATCHES",
+    "payload": "",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "c4ac0c82-9d22-492f-b36c-9aa56f6f3161",
+    "version": "bccf77ed-337d-4ecd-bcd5-f1e422f965ae",
+    "type": "Statement",
+    "name": "Unauthorized Audience",
+    "description": "For use when a policy denies a request because the access token audience is incorrect for the requested service.",
+    "shared": true,
+    "code": "denied-reason",
+    "appliesTo": "DENY",
+    "appliesIf": "PATH_MATCHES",
+    "payload": " {\"status\":403, \"message\":\"invalid_token\", \"detail\":\"The access token was issued for a different audience.\"}",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "76295749-1b58-40c3-9b14-9eceeb6d5a79",
+    "version": "f7b95e50-e590-4701-ba58-84116234ce26",
+    "type": "Statement",
+    "name": "Unauthorized Client",
+    "description": "For use when a policy denies a request because the client is not authorized to access the requested resource.",
+    "shared": true,
+    "code": "denied-reason",
+    "appliesTo": "DENY",
+    "appliesIf": "PATH_MATCHES",
+    "payload": " {\"status\":401,\"detail\":\"unauthorized_client\",\"message\":\"The client is not authorized to request this resource.\"}",
+    "obligatory": true,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "attributes": [],
+    "services": []
+  },
+  {
+    "id": "ca9c5cc4-a666-4ed8-8775-48ee891e8db6",
+    "version": "4e16f9b1-8d34-4a8a-9a12-64202f3b4e62",
+    "type": "Target",
+    "name": "Inline target",
+    "description": "",
+    "shared": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targeted": {
+      "services": [
+        "614bea3a-6fcf-4f73-9c4d-5609e5f9ea1a"
+      ],
+      "actions": [
+        "fb80c5c9-b9fb-45be-aa1f-18e8aba0e3a6"
+      ]
+    },
+    "properties": []
+  },
+  {
+    "id": "370bb26a-dcfb-4ddf-a604-ff6cef8e7411",
+    "version": "1163d6c6-db28-4e50-aa49-8cb8cd7a60c5",
+    "type": "Rule",
+    "name": "Access token is inactive",
+    "description": "",
+    "shared": false,
+    "disabled": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "effectSettings": {
+      "type": "unconditionalDeny"
+    },
+    "statements": [],
+    "condition": {
+      "and": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "9d722951-77a8-4ae6-94f9-6ced4adfee17"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "constant": {
+                  "value": "false"
+                }
+              }
+            }
+          },
+          {
+            "or": {
+              "conditions": [
+                {
+                  "reference": {
+                    "id": "cd212c60-6cf3-4156-9c17-a32162fdda6a"
+                  }
+                },
+                {
+                  "reference": {
+                    "id": "5d9208da-b746-4b0d-b741-b6eabc66e71c"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "properties": []
+  },
+  {
+    "id": "ee832397-014f-4b2c-b571-0016f868108a",
+    "version": "f1f96efa-abc3-40b4-b4ec-960c1a6350be",
+    "type": "Rule",
+    "name": "Permitted OAuth client",
+    "description": "Rule for matching an access token's client_id value with a permitted OAuth client. Clone this rule to a policy and then replace CHANGEME with a permitted client ID.",
+    "shared": true,
+    "disabled": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "effectSettings": {
+      "type": "unconditionalPermit"
+    },
+    "statements": [],
+    "condition": {
+      "and": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "4dd3a38e-39c6-44aa-99d7-106eb4e2b860"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "constant": {
+                  "value": "CHANGEME"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "properties": []
+  },
+  {
+    "id": "01f43d10-aac0-4ec2-976e-56954eb9c6a5",
+    "version": "2c575729-c01c-44bf-89d9-ef745f2f493b",
+    "type": "Rule",
+    "name": "Permitted SCIM scope for user",
+    "description": "Rule that permits a SCIM user to access its own attributes. Clone this rule to a policy, then replace CHANGEME with the name of a permitted scope.",
+    "shared": true,
+    "disabled": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "effectSettings": {
+      "type": "unconditionalPermit"
+    },
+    "statements": [],
+    "condition": {
+      "and": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "447bf9bf-0cf0-4b62-9b55-58fc9f606f49"
+                }
+              },
+              "op": "Contains",
+              "right": {
+                "constant": {
+                  "value": "CHANGEME"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "e8c5981b-fed8-4c44-b4aa-baf4dccdb166"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "attribute": {
+                  "id": "70f94c27-358f-4a20-a968-43799acd3d1b"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "properties": []
+  },
+  {
+    "id": "02938580-6f18-40b1-af7b-e6408ad88e7a",
+    "version": "3deb139c-3622-48a5-b966-eb130dfbd3b2",
+    "type": "Rule",
+    "name": "PatientRecord",
+    "description": "",
+    "shared": false,
+    "disabled": false,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "effectSettings": {
+      "type": "unconditionalPermit"
+    },
+    "statements": [],
+    "condition": {
+      "and": {
+        "conditions": [
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "2e483fd0-8032-4542-86b8-ed54d7c327d4"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "constant": {
+                  "value": "https://fram.connectid.darkedges.com/openam/oauth2"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "906145d2-15d2-43b5-968a-375d13d907d2"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "constant": {
+                  "value": "SalesforceClient"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "447bf9bf-0cf0-4b62-9b55-58fc9f606f49"
+                }
+              },
+              "op": "Contains",
+              "right": {
+                "constant": {
+                  "value": "read_accounts"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "13d72706-16cb-4f14-8871-f63c72dcbe11"
+                }
+              },
+              "op": "Equals",
+              "right": {
+                "attribute": {
+                  "id": "907db9e4-2586-486b-aefb-17ddc642e475"
+                }
+              }
+            }
+          },
+          {
+            "comparison": {
+              "left": {
+                "attribute": {
+                  "id": "ef032023-b474-4a63-8afe-ae02d7b6a5f9"
+                }
+              },
+              "op": "IsIn",
+              "right": {
+                "attribute": {
+                  "id": "c1b425d7-a1a4-499f-9917-1d715a84c817"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "properties": []
+  },
+  {
+    "id": "a28fba54-5996-4593-b6a7-9f407fec520c",
+    "version": "43e1f778-dc65-422b-8ae0-0c0b8be4c816",
+    "type": "Policy",
+    "name": "Token Validation",
+    "description": "",
+    "shared": false,
+    "disabled": false,
+    "combiningAlgorithm": {
+      "algorithm": "PermitUnlessDeny"
+    },
+    "children": [
+      {
+        "id": "370bb26a-dcfb-4ddf-a604-ff6cef8e7411",
+        "type": "Rule"
+      }
+    ],
+    "repetitionSettings": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "statements": [
+      "c0826ae4-8293-4f8c-8a5a-286c5df5cd1f"
+    ],
+    "condition": {
+      "empty": {}
+    },
+    "properties": []
+  },
+  {
+    "id": "24612b06-f73f-4564-a076-451281fac287",
+    "version": "a07db898-5f7e-4344-9796-18827f5d5c47",
+    "type": "Policy",
+    "name": "ProviderAPI",
+    "description": "",
+    "shared": false,
+    "disabled": false,
+    "combiningAlgorithm": {
+      "algorithm": "DenyUnlessPermit"
+    },
+    "children": [
+      {
+        "id": "02938580-6f18-40b1-af7b-e6408ad88e7a",
+        "type": "Rule"
+      }
+    ],
+    "repetitionSettings": null,
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [
+      "ca9c5cc4-a666-4ed8-8775-48ee891e8db6"
+    ],
+    "statements": [],
+    "condition": {
+      "empty": {}
+    },
+    "properties": []
+  },
+  {
+    "id": "e51688ff-1dc9-4b6c-bb36-8af64d02e9d1",
+    "version": "636d5241-2551-4cd7-8307-545eed154872",
+    "type": "PolicySet",
+    "name": "Global Decision Point",
+    "description": "",
+    "shared": false,
+    "disabled": false,
+    "combiningAlgorithm": {
+      "algorithm": "DenyOverrides"
+    },
+    "children": [
+      {
+        "id": "a28fba54-5996-4593-b6a7-9f407fec520c",
+        "type": "Policy"
+      },
+      {
+        "id": "24612b06-f73f-4564-a076-451281fac287",
+        "type": "Policy"
+      }
+    ],
+    "permissions": {
+      "inherit": true,
+      "rolePermissions": []
+    },
+    "targets": [],
+    "statements": [],
+    "condition": {
+      "empty": {}
+    },
+    "properties": []
+  },
+  {
+    "type": "SnapshotPackageFile$PackageSeparator"
+  },
+  {
+    "type": "SnapshotPackageFile$EndOfPackage"
+  },
+  {
+    "@class": "DataStreamFooter",
+    "digest": "qssSVZviVvXHpZyXVwTKcvgCivAXPj+PXR0qeeZcdzM="
+  }
+]
