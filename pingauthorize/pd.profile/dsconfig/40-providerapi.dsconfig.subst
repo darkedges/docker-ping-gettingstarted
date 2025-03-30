@@ -6,19 +6,19 @@
 dsconfig create-external-server \
     --server-name CIAM  \
     --type api  \
-    --set base-url:https://fram.connectid.darkedges.com
+    --set base-url:${CIAM_BASE_URL}
 
 dsconfig create-access-token-validator \
     --validator-name CIAM  \
     --type jwt  \
     --set enabled:true  \
     --set authorization-server:CIAM  \
-    --set jwks-endpoint-path:https://fram.connectid.darkedges.com/openam/oauth2/connect/jwk_uri
+    --set jwks-endpoint-path:{CIAM_BASE_URL}/openam/oauth2/connect/jwk_uri
 
 dsconfig create-external-server \
     --server-name ProviderAPI  \
     --type api  \
-    --set base-url:http://providerapi.kong:8080
+    --set base-url:${KONG_BASE_URL}
 
 dsconfig create-gateway-api-endpoint \
     --endpoint-name ProviderAPI  \
