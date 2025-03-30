@@ -13,7 +13,7 @@ dsconfig create-access-token-validator \
     --type jwt  \
     --set enabled:true  \
     --set authorization-server:CIAM  \
-    --set jwks-endpoint-path:{CIAM_BASE_URL}/openam/oauth2/connect/jwk_uri
+    --set jwks-endpoint-path:${CIAM_BASE_URL}/openam/oauth2/connect/jwk_uri
 
 dsconfig create-external-server \
     --server-name ProviderAPI  \
