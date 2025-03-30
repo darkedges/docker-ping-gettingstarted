@@ -1,8 +1,3 @@
-#dsconfig create-deployment-package-store \
-#    --store-name FileStore  \
-#    --type filesystem  \
-#    --set poll-directory:/tmp/deployment
-
 dsconfig create-external-server \
     --server-name CIAM  \
     --type api  \
