@@ -1,3 +1,8 @@
+dsconfig create-deployment-package-store \
+    --store-name FileStore  \
+    --type filesystem  \
+    --set poll-directory:/home/ping
+
 dsconfig create-external-server \
     --server-name CIAM  \
     --type api  \
