@@ -1,7 +1,24 @@
-dsconfig create-deployment-package-store \
-    --store-name FileStore  \
-    --type filesystem  \
-    --set poll-directory:/home/ping
+dsconfig set-trust-manager-provider-prop \
+    --provider-name 'Blind Trust'  \
+    --set enabled:true 
+
+dsconfig create-external-server \
+    --server-name 'PingAuthorize Policy Editor' \
+    --type policy \
+    --set base-url:https://pingauthorize-pingauthorizepap-0.ping:8443 \
+    --set hostname-verification-method:allow-all \
+    --set key-manager-provider:Null \
+    --set 'trust-manager-provider:Blind Trust' \
+    --set shared-secret:${PING_IDENTITY_PASSWORD} \
+    --set 'branch:ProviderAPI'
+
+dsconfig set-policy-decision-service-prop \
+    --set pdp-mode:external  \
+    --set 'policy-server:PingAuthorize Policy Editor'  \
+    --set trust-framework-version:v2  \
+    --set decision-response-view:decision-tree  \
+    --set decision-response-view:evaluated-entities  \
+    --set decision-response-view:request 
 
 dsconfig create-external-server \
     --server-name CIAM  \
