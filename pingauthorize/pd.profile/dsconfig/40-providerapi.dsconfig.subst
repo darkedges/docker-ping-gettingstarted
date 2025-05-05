@@ -55,4 +55,4 @@ dsconfig create-sideband-api-endpoint \
 
 dsconfig set-http-servlet-extension-prop \
     --extension-name "Sideband API"  \
-    --set request-context-method:request
+    --set request-context-method:state
