@@ -10,7 +10,7 @@ dsconfig create-external-server \
     --set key-manager-provider:Null \
     --set 'trust-manager-provider:Blind Trust' \
     --set shared-secret:${PING_IDENTITY_PASSWORD} \
-    --set 'branch:ProviderAPI'
+    --set 'branch:ProviderAPI.snapshot'
 
 dsconfig set-policy-decision-service-prop \
     --set pdp-mode:external  \
