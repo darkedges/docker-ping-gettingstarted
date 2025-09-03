@@ -1297,8 +1297,7 @@
             "operationType": "SAVE",
             "items": [{
                 "oidcClientCredentials": {
-                    "clientId": "${sp_idpConnections_items_msft_client_id}",
-                    "secret": "${sp_idpConnections_items_msft_client_secret}"
+                    "clientId": "${sp_idpConnections_items_msft_client_id}"
                 },
                 "additionalAllowedEntitiesConfiguration": {
                     "additionalAllowedEntities": [],
