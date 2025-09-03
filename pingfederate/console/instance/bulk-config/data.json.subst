@@ -1297,8 +1297,8 @@
             "operationType": "SAVE",
             "items": [{
                 "oidcClientCredentials": {
-                    "clientId": "c7ff7e6a-6d9f-41e0-a11e-ae463de7cae8",
-                    "secret": "${sp_idpConnections_items_qC3UFVfb1gxCi5nzCqfml.FQYdH_oidcClientCredentials_c7ff7e6a_6d9f_41e0_a11e_ae463de7cae8_secret}"
+                    "clientId": "${sp_idpConnections_items_msft_client_id}",
+                    "secret": "${sp_idpConnections_items_msft_client_secret}"
                 },
                 "additionalAllowedEntitiesConfiguration": {
                     "additionalAllowedEntities": [],
