@@ -444,7 +444,7 @@
                     "name": "Policy Tree",
                     "description": "Policy tree debug logging.",
                     "id": "policytree",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "Data Store Response Times",
@@ -490,11 +490,11 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "ADMINISTRATOR",
-                    "CRYPTO_ADMINISTRATOR",
                     "EXPRESSION_ADMINISTRATOR",
-                    "USER_ADMINISTRATOR",
-                    "DATA_COLLECTION_ADMINISTRATOR"
+                    "CRYPTO_ADMINISTRATOR",
+                    "DATA_COLLECTION_ADMINISTRATOR",
+                    "ADMINISTRATOR",
+                    "USER_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -1839,6 +1839,33 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "configuration": {
+                    "tables": [{
+                        "name": "Clients",
+                        "rows": [{
+                            "defaultRow": false,
+                            "fields": [{
+                                "name": "Client ID",
+                                "value": "pa_wam"
+                            }]
+                        }]
+                    }],
+                    "fields": []
+                },
+                "name": "OAuth Client",
+                "id": "OAuthClientSelector",
+                "lastModified": "2025-09-04T06:26:54.093Z",
+                "pluginDescriptorRef": {
+                    "location": "https://localhost:9999/pf-admin-api/v1/authenticationSelectors/descriptors/com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector",
+                    "id": "com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector"
+                },
+                "attributeContract": {}
+            }],
+            "resourceType": "/authenticationSelectors"
+        },
+        {
+            "operationType": "SAVE",
+            "items": [{
                 "apiEnabled": true,
                 "restrictAccessToRedirectlessMode": false,
                 "includeRequestContext": false,
@@ -1851,7 +1878,50 @@
             "items": [{
                 "defaultAuthenticationSources": [],
                 "failIfNoSelection": false,
-                "authnSelectionTrees": [],
+                "authnSelectionTrees": [{
+                    "name": "MicrosoftForPingAccess",
+                    "id": "smPVtYu33YLScd4mR1AUPcs2g",
+                    "handleFailuresLocally": false,
+                    "enabled": true,
+                    "rootNode": {
+                        "children": [
+                            {"action": {
+                                "context": "No",
+                                "type": "CONTINUE"
+                            }},
+                            {
+                                "children": [
+                                    {"action": {
+                                        "context": "Fail",
+                                        "type": "DONE"
+                                    }},
+                                    {"action": {
+                                        "context": "Success",
+                                        "type": "DONE"
+                                    }}
+                                ],
+                                "action": {
+                                    "authenticationSource": {
+                                        "type": "IDP_CONNECTION",
+                                        "sourceRef": {
+                                            "location": "https://localhost:9999/pf-admin-api/v1/sp/idpConnections/qC3UFVfb1gxCi5nzCqfml.FQYdH",
+                                            "id": "qC3UFVfb1gxCi5nzCqfml.FQYdH"
+                                        }
+                                    },
+                                    "context": "Yes",
+                                    "type": "AUTHN_SOURCE"
+                                }
+                            }
+                        ],
+                        "action": {
+                            "authenticationSelectorRef": {
+                                "location": "https://localhost:9999/pf-admin-api/v1/authenticationSelectors/OAuthClientSelector",
+                                "id": "OAuthClientSelector"
+                            },
+                            "type": "AUTHN_SELECTOR"
+                        }
+                    }
+                }],
                 "trackedHttpParameters": []
             }],
             "resourceType": "/authenticationPolicies/default"
@@ -1860,7 +1930,7 @@
             "operationType": "SAVE",
             "items": [{
                 "enableSpAuthnSelection": false,
-                "enableIdpAuthnSelection": false
+                "enableIdpAuthnSelection": true
             }],
             "resourceType": "/authenticationPolicies/settings"
         }
