@@ -1,5 +1,5 @@
 {
-    "metadata": {"pfVersion": "12.1.3.0"},
+    "metadata": {"pfVersion": "12.3.1.0"},
     "operations": [
         {
             "operationType": "SAVE",
@@ -155,11 +155,18 @@
         {
             "operationType": "SAVE",
             "subResource": "org.sourceid.saml20.domain.mgmt.AdminUserManager",
-            "items": [{
-                "stringValue": "true",
-                "id": "isEaRoleUpdated",
-                "type": "STRING"
-            }],
+            "items": [
+                {
+                    "stringValue": "true",
+                    "id": "isDcRoleUpdated",
+                    "type": "STRING"
+                },
+                {
+                    "stringValue": "true",
+                    "id": "isEaRoleUpdated",
+                    "type": "STRING"
+                }
+            ],
             "resourceType": "/configStore"
         },
         {
@@ -274,7 +281,17 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{"staticJwksEnabled": false}],
+            "items": [{
+                "dynamicKeyCertificateInformation": {
+                    "country": null,
+                    "city": null,
+                    "organization": null,
+                    "organizationUnit": null,
+                    "state": null
+                },
+                "publishDynamicKeyX5cs": false,
+                "staticJwksEnabled": false
+            }],
             "resourceType": "/keyPairs/oauthOpenIdConnect"
         },
         {
@@ -284,7 +301,6 @@
                     "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                     "defaultSource": true
                 }],
-                "validateConnectionSql": "",
                 "type": "JDBC",
                 "userName": "sa",
                 "maskAttributeValues": false,
@@ -296,7 +312,7 @@
                 "name": "ProvisionerDS (sa)",
                 "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                 "id": "ProvisionerDS",
-                "lastModified": "2025-09-03T06:00:14.359Z",
+                "lastModified": "2025-09-04T02:33:07.153Z",
                 "maxPoolSize": 100,
                 "blockingTimeout": 5000
             }],
@@ -474,10 +490,11 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "USER_ADMINISTRATOR",
-                    "CRYPTO_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR"
+                    "CRYPTO_ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR",
+                    "USER_ADMINISTRATOR",
+                    "DATA_COLLECTION_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -518,7 +535,11 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{"proxyTerminatesHttpsConns": false}],
+            "items": [{
+                "clientCertHeaderEncodingFormat": "APACHE_MOD_SSL",
+                "proxyTerminatesHttpsConns": false,
+                "enableClientCertHeaderAuth": false
+            }],
             "resourceType": "/incomingProxySettings"
         },
         {
@@ -542,9 +563,16 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "allowedOriginsList": [],
+                "enabled": false
+            }],
+            "resourceType": "/administrativeApi/corsSettings"
+        },
+        {
+            "operationType": "SAVE",
+            "items": [{
                 "name": "Microsoft",
                 "id": "jPrLT8dXHqRSgGIq",
-                "lastModified": "2025-09-03T05:55:08.417Z",
                 "coreAttributes": [{"name": "subject"}],
                 "extendedAttributes": []
             }],
@@ -605,7 +633,7 @@
                 },
                 "name": "mypcv",
                 "id": "mypcv",
-                "lastModified": "2025-09-03T05:04:42.672Z",
+                "lastModified": "2025-09-04T02:33:07.596Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
@@ -613,6 +641,21 @@
                 "attributeContract": {"coreAttributes": [{"name": "username"}]}
             }],
             "resourceType": "/passwordCredentialValidators"
+        },
+        {
+            "operationType": "SAVE",
+            "items": [{
+                "registrationEnabled": false,
+                "apcId": {
+                    "location": "https://localhost:9999/pf-admin-api/v1/authenticationPolicyContracts/jPrLT8dXHqRSgGIq",
+                    "id": "jPrLT8dXHqRSgGIq"
+                },
+                "name": "Microsoft",
+                "authSources": [],
+                "id": "iDaqfI4xbNiau2fE",
+                "profileEnabled": false
+            }],
+            "resourceType": "/localIdentity/identityProfiles"
         },
         {
             "operationType": "SAVE",
@@ -662,9 +705,13 @@
                             }
                         ]
                     },
+                    "tokenEndpointAttributeContract": {
+                        "inherited": false,
+                        "attributes": []
+                    },
                     "name": "GeneralAccessToken",
                     "id": "GeneralAccessToken",
-                    "lastModified": "2025-09-03T05:04:42.742Z",
+                    "lastModified": "2025-09-04T02:33:07.673Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin",
                         "id": "org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin"
@@ -836,9 +883,13 @@
                             }
                         ]
                     },
+                    "tokenEndpointAttributeContract": {
+                        "inherited": false,
+                        "attributes": []
+                    },
                     "name": "pfruntime",
                     "id": "pfruntime",
-                    "lastModified": "2025-09-03T05:04:42.735Z",
+                    "lastModified": "2025-09-04T02:33:07.662Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin",
                         "id": "com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin"
@@ -968,7 +1019,7 @@
                         },
                         {
                             "name": "Local Identity Profile",
-                            "value": ""
+                            "value": "iDaqfI4xbNiau2fE"
                         },
                         {
                             "name": "Notification Publisher",
@@ -1170,7 +1221,7 @@
                 },
                 "name": "myidp",
                 "id": "myidp",
-                "lastModified": "2025-09-03T05:04:42.769Z",
+                "lastModified": "2025-09-04T05:19:43.225Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                     "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
@@ -1210,6 +1261,25 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "scopeGroups": [],
+                "offlineAccessRequireConsentPrompt": false,
+                "refreshRollingInterval": 0,
+                "tokenEndpointBaseUrl": "",
+                "trackUserSessionsForLogout": false,
+                "parStatus": "ENABLED",
+                "refreshTokenRollingGracePeriod": 60,
+                "persistentGrantIdleTimeout": 30,
+                "devicePollingInterval": 5,
+                "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+                "jwtSecuredAuthorizationResponseModeLifetime": 600,
+                "pendingAuthorizationTimeout": 600,
+                "consentLifetimeDays": -1,
+                "bypassActivationCodeConfirmation": false,
+                "returnIdTokenOnOpenIdWithDeviceAuthzGrant": false,
+                "refreshRollingIntervalTimeUnit": "HOURS",
+                "registeredAuthorizationPath": "",
+                "authorizationCodeTimeout": 60,
+                "parReferenceTimeout": 60,
                 "persistentGrantContract": {
                     "coreAttributes": [
                         {"name": "USER_KEY"},
@@ -1217,44 +1287,27 @@
                     ],
                     "extendedAttributes": []
                 },
-                "scopeGroups": [],
                 "atmIdForOAuthGrantManagement": "",
-                "offlineAccessRequireConsentPrompt": false,
-                "refreshRollingInterval": 0,
-                "tokenEndpointBaseUrl": "",
-                "trackUserSessionsForLogout": false,
-                "parStatus": "ENABLED",
                 "defaultScopeDescription": "default scope",
-                "refreshTokenRollingGracePeriod": 60,
                 "authorizationCodeEntropy": 30,
-                "persistentGrantIdleTimeout": 30,
                 "rollRefreshTokenValues": false,
                 "requireOfflineAccessScopeToIssueRefreshTokens": false,
                 "allowedOrigins": [],
                 "allowUnidentifiedClientExtensionGrants": false,
-                "devicePollingInterval": 5,
                 "bypassAuthorizationForApprovedConsents": false,
-                "persistentGrantIdleTimeoutTimeUnit": "DAYS",
                 "userAuthorizationUrl": "",
                 "dpopProofRequireNonce": false,
-                "jwtSecuredAuthorizationResponseModeLifetime": 600,
                 "clientSecretRetentionPeriod": 0,
                 "dpopProofEnforceReplayPrevention": false,
-                "pendingAuthorizationTimeout": 600,
                 "disallowPlainPKCE": false,
-                "consentLifetimeDays": -1,
                 "exclusiveScopeGroups": [],
                 "userAuthorizationConsentPageSetting": "INTERNAL",
-                "bypassActivationCodeConfirmation": false,
                 "includeIssuerInAuthorizationResponse": false,
-                "refreshRollingIntervalTimeUnit": "HOURS",
                 "persistentGrantReuseGrantTypes": ["IMPLICIT"],
-                "registeredAuthorizationPath": "",
                 "dpopProofLifetimeSeconds": 120,
                 "persistentGrantLifetime": -1,
                 "refreshTokenLength": 42,
                 "allowUnidentifiedClientROCreds": false,
-                "authorizationCodeTimeout": 60,
                 "persistentGrantLifetimeUnit": "DAYS",
                 "activationCodeCheckMode": "AFTER_AUTHENTICATION",
                 "scopes": [
@@ -1286,7 +1339,6 @@
                 ],
                 "enableCookielessUserAuthorizationAuthenticationApi": false,
                 "scopeForOAuthGrantManagement": "",
-                "parReferenceTimeout": 60,
                 "exclusiveScopes": [],
                 "parReferenceLength": 24,
                 "bypassAuthorizationForApprovedGrants": false
@@ -1310,10 +1362,10 @@
                 "entityId": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
                 "loggingMode": "STANDARD",
                 "type": "IDP",
-                "creationDate": "2025-09-03T06:01:16.917Z",
+                "creationDate": "2025-09-04T02:33:07.866Z",
                 "errorPageMsgId": "errorDetail.spSsoFailure",
                 "baseUrl": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
-                "modificationDate": "2025-09-03T06:01:16.917Z",
+                "modificationDate": "2025-09-04T05:43:48.087Z",
                 "name": "Microsoft",
                 "id": "qC3UFVfb1gxCi5nzCqfml.FQYdH",
                 "idpBrowserSso": {
@@ -1346,6 +1398,7 @@
                         "requestParameters": [],
                         "frontChannelLogoutUri": "https://pfruntime.traefik.me/sp/eyJpc3MiOiJodHRwczpcL1wvbG9naW4ubWljcm9zb2Z0b25saW5lLmNvbVwvMjI0ZmU2NDEtOTAzNi00MjYyLTlhMTAtMjgxYTY1Y2RiZjZlXC92Mi4wIn0/fc-logout.openid",
                         "authorizationEndpoint": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/oauth2/v2.0/authorize",
+                        "includeNotBeforeClaim": false,
                         "postLogoutRedirectUri": "https://pfruntime.traefik.me/sp/post-logout.openid",
                         "tokenEndpoint": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/oauth2/v2.0/token",
                         "authenticationScheme": "BASIC",
@@ -1446,6 +1499,14 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "subjectDNMapList": [],
+                "issuerDNMapList": []
+            }],
+            "resourceType": "/protocolMetadata/attributeRequesterMappings"
+        },
+        {
+            "operationType": "SAVE",
+            "items": [{
                 "trackAdapterSessionsForLogout": false,
                 "sessionRevocationLifetime": 490,
                 "revokeUserSessionOnLogout": true
@@ -1472,6 +1533,11 @@
                 "enableSessions": false
             }],
             "resourceType": "/session/authenticationSessionPolicies/global"
+        },
+        {
+            "operationType": "SAVE",
+            "items": [{"enableSessionQuotas": false}],
+            "resourceType": "/session/quotas"
         },
         {
             "operationType": "SAVE",
@@ -1504,6 +1570,7 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "returnIdTokenOnTokenExchangeGrant": false,
                 "idTokenTypHeaderValue": "",
                 "scopeAttributeMappings": {},
                 "returnIdTokenOnRefreshGrant": false,
@@ -1527,9 +1594,10 @@
                 },
                 "includeX5tInIdToken": false,
                 "name": "OIDC",
+                "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-03T05:04:42.921Z",
+                "lastModified": "2025-09-04T02:33:08.151Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/GeneralAccessToken",
@@ -1584,6 +1652,7 @@
                     },
                     "persistentGrantExpirationTime": 0,
                     "restrictedResponseTypes": [],
+                    "lockoutMaxMaliciousActionsType": "SERVER_DEFAULT",
                     "requireProofKeyForCodeExchange": false,
                     "enableCookielessAuthenticationApi": false,
                     "persistentGrantIdleTimeoutTimeUnit": "DAYS",
@@ -1596,15 +1665,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-03T05:04:42.962Z",
+                    "creationDate": "2025-09-04T02:33:08.216Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["ACCESS_TOKEN_VALIDATION"],
-                    "modificationDate": "2025-09-03T05:04:42.962Z",
+                    "modificationDate": "2025-09-04T02:33:08.216Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-03T05:04:42.000Z",
+                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
                     "name": "PingAccessResourceServer",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -1635,6 +1704,7 @@
                     },
                     "persistentGrantExpirationTime": 0,
                     "restrictedResponseTypes": [],
+                    "lockoutMaxMaliciousActionsType": "SERVER_DEFAULT",
                     "requireProofKeyForCodeExchange": false,
                     "enableCookielessAuthenticationApi": false,
                     "persistentGrantIdleTimeoutTimeUnit": "DAYS",
@@ -1647,15 +1717,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-03T05:04:42.991Z",
+                    "creationDate": "2025-09-04T02:33:08.243Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["AUTHORIZATION_CODE"],
-                    "modificationDate": "2025-09-03T05:04:42.991Z",
+                    "modificationDate": "2025-09-04T02:33:08.243Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-03T05:04:42.000Z",
+                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
                     "name": "PingAccessWebAccessManagement",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -1686,6 +1756,7 @@
                     },
                     "persistentGrantExpirationTime": 0,
                     "restrictedResponseTypes": [],
+                    "lockoutMaxMaliciousActionsType": "SERVER_DEFAULT",
                     "requireProofKeyForCodeExchange": false,
                     "enableCookielessAuthenticationApi": false,
                     "persistentGrantIdleTimeoutTimeUnit": "DAYS",
@@ -1698,19 +1769,19 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-03T05:04:42.998Z",
+                    "creationDate": "2025-09-04T02:33:08.252Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/callback"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["CLIENT_CREDENTIALS"],
-                    "modificationDate": "2025-09-03T05:04:42.998Z",
+                    "modificationDate": "2025-09-04T02:33:08.252Z",
                     "defaultAccessTokenManagerRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
                         "id": "pfruntime"
                     },
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-03T05:04:42.000Z",
+                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
                     "name": "providerapi",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -1768,7 +1839,7 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "apiEnabled": false,
+                "apiEnabled": true,
                 "restrictAccessToRedirectlessMode": false,
                 "includeRequestContext": false,
                 "enableApiDescriptions": true
