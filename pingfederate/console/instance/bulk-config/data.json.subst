@@ -1298,7 +1298,7 @@
             "items": [{
                 "oidcClientCredentials": {
                     "clientId": "${sp_idpConnections_items_msft_client_id}",
-                    "secret": "${sp_idpConnections_items_msft_client_secret}"
+                    "encryptedSecret": "${sp_idpConnections_items_msft_client_secret}"
                 },
                 "additionalAllowedEntitiesConfiguration": {
                     "additionalAllowedEntities": [],
