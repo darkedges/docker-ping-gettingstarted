@@ -26,3 +26,4 @@ export PING_IDENTITY_PASSWORD=${PING_IDENTITY_PASSWORD:=2FederateM0re}
 export oauth_clients_items_clientAuth_providerapi_secret=${PING_IDENTITY_PASSWORD:=2FederateM0re}
 export sp_idpConnections_items_msft_client_id=${MSFT_CLIENT_ID:=c7ff7e6a-6d9f-41e0-a11e-ae463de7cae8}
 export sp_idpConnections_items_msft_client_secret=${MSFT_CLIENT_SECRET:=Passw0rd}
+export idp_adapters_items_ReferenceID_configuration_fields_Pass_Phrase_value=${GENERIC_PASSWORD:=Passw0rd}

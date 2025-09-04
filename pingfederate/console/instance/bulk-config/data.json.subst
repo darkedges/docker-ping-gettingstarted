@@ -490,11 +490,11 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "USER_ADMINISTRATOR",
-                    "CRYPTO_ADMINISTRATOR",
                     "DATA_COLLECTION_ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR",
-                    "ADMINISTRATOR"
+                    "ADMINISTRATOR",
+                    "CRYPTO_ADMINISTRATOR",
+                    "USER_ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -1423,14 +1423,14 @@
                     ],
                     "extendedAttributes": []
                 },
-                "atmIdForOAuthGrantManagement": "",
+                "atmIdForOAuthGrantManagement": "pfruntime",
                 "defaultScopeDescription": "default scope",
                 "authorizationCodeEntropy": 30,
                 "rollRefreshTokenValues": false,
                 "requireOfflineAccessScopeToIssueRefreshTokens": false,
                 "allowedOrigins": [],
                 "allowUnidentifiedClientExtensionGrants": false,
-                "bypassAuthorizationForApprovedConsents": false,
+                "bypassAuthorizationForApprovedConsents": true,
                 "userAuthorizationUrl": "",
                 "dpopProofRequireNonce": false,
                 "clientSecretRetentionPeriod": 0,
@@ -1439,7 +1439,10 @@
                 "exclusiveScopeGroups": [],
                 "userAuthorizationConsentPageSetting": "INTERNAL",
                 "includeIssuerInAuthorizationResponse": false,
-                "persistentGrantReuseGrantTypes": ["IMPLICIT"],
+                "persistentGrantReuseGrantTypes": [
+                    "IMPLICIT",
+                    "AUTHORIZATION_CODE"
+                ],
                 "dpopProofLifetimeSeconds": 120,
                 "persistentGrantLifetime": -1,
                 "refreshTokenLength": 42,
@@ -1474,10 +1477,10 @@
                     }
                 ],
                 "enableCookielessUserAuthorizationAuthenticationApi": false,
-                "scopeForOAuthGrantManagement": "",
+                "scopeForOAuthGrantManagement": "openid",
                 "exclusiveScopes": [],
                 "parReferenceLength": 24,
-                "bypassAuthorizationForApprovedGrants": false
+                "bypassAuthorizationForApprovedGrants": true
             }],
             "resourceType": "/oauth/authServerSettings"
         },
@@ -1723,7 +1726,7 @@
                 "attributeMapping": {
                     "attributeContractFulfillment": {"sub": {
                         "source": {"type": "TOKEN"},
-                        "value": "UserName"
+                        "value": "sub"
                     }},
                     "attributeSources": [],
                     "issuanceCriteria": {"conditionalCriteria": []}
@@ -1733,11 +1736,11 @@
                 "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-04T02:33:08.151Z",
+                "lastModified": "2025-09-04T11:09:42.732Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
-                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/GeneralAccessToken",
-                    "id": "GeneralAccessToken"
+                    "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
+                    "id": "pfruntime"
                 }
             }],
             "resourceType": "/oauth/openIdConnect/policies"
@@ -1875,13 +1878,15 @@
                     }
                 },
                 {
-                    "bypassApprovalPage": false,
+                    "bypassApprovalPage": true,
                     "offlineAccessRequireConsentPrompt": "SERVER_DEFAULT",
                     "persistentGrantReuseType": "SERVER_DEFAULT",
                     "persistentGrantIdleTimeoutType": "SERVER_DEFAULT",
-                    "requireSignedRequests": false,
+                    "requireSignedRequests": true,
+                    "description": "",
                     "persistentGrantIdleTimeout": 0,
                     "enabled": true,
+                    "requestObjectSigningAlgorithm": "ES256",
                     "requireOfflineAccessScopeToIssueRefreshTokens": "SERVER_DEFAULT",
                     "oidcPolicy": {
                         "grantAccessSessionRevocationApi": false,
@@ -1890,6 +1895,7 @@
                         "logoutMode": "NONE",
                         "pairwiseIdentifierUserType": false
                     },
+                    "jwksSettings": {"jwks": "{     \"keys\": [         {             \"kty\": \"EC\",             \"use\": \"sig\",             \"crv\": \"P-256\",             \"kid\": \"_oTVasarpygjoxDtySjE0d1iCmFM13aVjj5tS5EoFMY\",             \"x\": \"rW6tCAsfE4bfqP-tuSDWcpeAXYZ88zX8Fi8BziYwrH8\",             \"y\": \"Hb3lusFj9nKHmyC8QFr_uf_yt6QSp1CCp_zwaOiio34\",             \"alg\": \"ES256\"         }     ] }"},
                     "persistentGrantExpirationTime": 0,
                     "restrictedResponseTypes": [],
                     "lockoutMaxMaliciousActionsType": "SERVER_DEFAULT",
@@ -1908,15 +1914,20 @@
                     "creationDate": "2025-09-04T02:33:08.252Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/callback"],
+                    "logoUrl": "",
                     "authorizationDetailTypes": [],
-                    "grantTypes": ["CLIENT_CREDENTIALS"],
-                    "modificationDate": "2025-09-04T02:33:08.252Z",
+                    "grantTypes": [
+                        "AUTHORIZATION_CODE",
+                        "CLIENT_CREDENTIALS",
+                        "ACCESS_TOKEN_VALIDATION"
+                    ],
+                    "modificationDate": "2025-09-04T11:16:33.048Z",
                     "defaultAccessTokenManagerRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
                         "id": "pfruntime"
                     },
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
-                    "requirePushedAuthorizationRequests": false,
+                    "requirePushedAuthorizationRequests": true,
                     "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
                     "name": "providerapi",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
@@ -1927,7 +1938,9 @@
                     "clientAuth": {
                         "secondarySecrets": [],
                         "secret": "${oauth_clients_items_clientAuth_providerapi_secret}",
-                        "type": "SECRET"
+                        "type": "PRIVATE_KEY_JWT",
+                        "enforceReplayPrevention": false,
+                        "tokenEndpointAuthSigningAlgorithm": "ES256"
                     }
                 }
             ],
@@ -1941,6 +1954,26 @@
         {
             "operationType": "SAVE",
             "items": [
+                {
+                    "context": {
+                        "contextRef": {
+                            "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/myidp",
+                            "id": "myidp"
+                        },
+                        "type": "IDP_ADAPTER"
+                    },
+                    "attributeContractFulfillment": {"sub": {
+                        "source": {"type": "OAUTH_PERSISTENT_GRANT"},
+                        "value": "USER_KEY"
+                    }},
+                    "id": "authz_req|myidp|pfruntime",
+                    "attributeSources": [],
+                    "issuanceCriteria": {"conditionalCriteria": []},
+                    "accessTokenManagerRef": {
+                        "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
+                        "id": "pfruntime"
+                    }
+                },
                 {
                     "context": {"type": "CLIENT_CREDENTIALS"},
                     "attributeContractFulfillment": {"sub": {
@@ -2063,7 +2096,7 @@
                         "name": "RefIdForPingAcess",
                         "id": "4kHXHhjagg2Yl1sb6x3vBSFlz",
                         "handleFailuresLocally": false,
-                        "enabled": true,
+                        "enabled": false,
                         "rootNode": {
                             "children": [
                                 {
