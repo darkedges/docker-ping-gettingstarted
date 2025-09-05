@@ -296,26 +296,327 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{
-                "connectionUrlTags": [{
+            "items": [
+                {
+                    "maskAttributeValues": false,
+                    "configuration": {
+                        "tables": [
+                            {
+                                "name": "Base URLs and Tags",
+                                "rows": [{
+                                    "defaultRow": true,
+                                    "fields": [
+                                        {
+                                            "name": "Base URL",
+                                            "value": "http://userapi.localdev"
+                                        },
+                                        {
+                                            "name": "Tags",
+                                            "value": ""
+                                        }
+                                    ]
+                                }]
+                            },
+                            {
+                                "name": "HTTP Request Headers",
+                                "rows": []
+                            },
+                            {
+                                "name": "Attributes",
+                                "rows": [
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "given_name"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/given_name"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "middle_name"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/middle_name"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "family_name"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/family_name"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "email"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/email"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "birthdate"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/birthdate"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "phone_number"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/phone_number"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "address1"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/address1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "address2"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/address2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "city"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/city"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "state"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/state"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "postcode"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/postcode"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "country"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address/country"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "defaultRow": false,
+                                        "fields": [
+                                            {
+                                                "name": "Local Attribute",
+                                                "value": "address"
+                                            },
+                                            {
+                                                "name": "JSON Response Attribute Path",
+                                                "value": "/address"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "fields": [
+                            {
+                                "name": "Authentication Method",
+                                "value": "None"
+                            },
+                            {
+                                "name": "HTTP Method",
+                                "value": "GET"
+                            },
+                            {
+                                "name": "Username",
+                                "value": ""
+                            },
+                            {
+                                "name": "Password",
+                                "value": ""
+                            },
+                            {
+                                "name": "Password Reference",
+                                "value": ""
+                            },
+                            {
+                                "name": "OAuth Token Endpoint",
+                                "value": ""
+                            },
+                            {
+                                "name": "OAuth Scope",
+                                "value": ""
+                            },
+                            {
+                                "name": "Client ID",
+                                "value": ""
+                            },
+                            {
+                                "name": "Client Secret",
+                                "value": ""
+                            },
+                            {
+                                "name": "Client Secret Reference",
+                                "value": ""
+                            },
+                            {
+                                "name": "Client TLS Certificate",
+                                "value": ""
+                            },
+                            {
+                                "name": "Enable HTTPS Hostname Verification",
+                                "value": "true"
+                            },
+                            {
+                                "name": "Read Timeout (ms)",
+                                "value": "10000"
+                            },
+                            {
+                                "name": "Connection Timeout (ms)",
+                                "value": "10000"
+                            },
+                            {
+                                "name": "Max Payload Size (KB)",
+                                "value": "1024"
+                            },
+                            {
+                                "name": "Retry Request",
+                                "value": "true"
+                            },
+                            {
+                                "name": "Maximum Retries Limit",
+                                "value": "5"
+                            },
+                            {
+                                "name": "Retry Error Codes",
+                                "value": "429"
+                            },
+                            {
+                                "name": "Maximum Connections",
+                                "value": "32"
+                            },
+                            {
+                                "name": "Test Connection URL",
+                                "value": ""
+                            },
+                            {
+                                "name": "Test Connection Body",
+                                "value": ""
+                            },
+                            {
+                                "name": "Exclude default Content-Type from GET Request",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    "name": "UserAPI",
+                    "id": "Other-3BC073D2D209BB69D62969F0DE4FF2462B038846",
+                    "lastModified": "2025-09-05T03:28:58.614Z",
+                    "type": "CUSTOM",
+                    "pluginDescriptorRef": {
+                        "location": "https://localhost:9999/pf-admin-api/v1/dataStores/descriptors/com.pingidentity.pf.datastore.other.RestDataSourceDriver",
+                        "id": "com.pingidentity.pf.datastore.other.RestDataSourceDriver"
+                    }
+                },
+                {
+                    "connectionUrlTags": [{
+                        "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
+                        "defaultSource": true
+                    }],
+                    "type": "JDBC",
+                    "userName": "sa",
+                    "maskAttributeValues": false,
+                    "password": "${dataStores_items_ProvisionerDS_ProvisionerDS_password}",
+                    "minPoolSize": 10,
+                    "allowMultiValueAttributes": false,
+                    "driverClass": "org.hsqldb.jdbcDriver",
+                    "idleTimeout": 5,
+                    "name": "ProvisionerDS (sa)",
                     "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
-                    "defaultSource": true
-                }],
-                "type": "JDBC",
-                "userName": "sa",
-                "maskAttributeValues": false,
-                "password": "${dataStores_items_ProvisionerDS_ProvisionerDS_password}",
-                "minPoolSize": 10,
-                "allowMultiValueAttributes": false,
-                "driverClass": "org.hsqldb.jdbcDriver",
-                "idleTimeout": 5,
-                "name": "ProvisionerDS (sa)",
-                "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
-                "id": "ProvisionerDS",
-                "lastModified": "2025-09-05T02:43:32.637Z",
-                "maxPoolSize": 100,
-                "blockingTimeout": 5000
-            }],
+                    "id": "ProvisionerDS",
+                    "lastModified": "2025-09-05T02:43:32.637Z",
+                    "maxPoolSize": 100,
+                    "blockingTimeout": 5000
+                }
+            ],
             "resourceType": "/dataStores"
         },
         {
@@ -490,11 +791,11 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "EXPRESSION_ADMINISTRATOR",
                     "CRYPTO_ADMINISTRATOR",
-                    "DATA_COLLECTION_ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "USER_ADMINISTRATOR"
+                    "USER_ADMINISTRATOR",
+                    "DATA_COLLECTION_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -1808,7 +2109,29 @@
                             "value": "email"
                         }
                     },
-                    "attributeSources": [],
+                    "attributeSources": [{
+                        "dataStoreRef": {
+                            "location": "https://localhost:9999/pf-admin-api/v1/dataStores/Other-3BC073D2D209BB69D62969F0DE4FF2462B038846",
+                            "id": "Other-3BC073D2D209BB69D62969F0DE4FF2462B038846"
+                        },
+                        "description": "userapi",
+                        "id": "userapi",
+                        "filterFields": [
+                            {
+                                "name": "Resource Path",
+                                "value": "/user/${sub}"
+                            },
+                            {
+                                "name": "Authorization Header",
+                                "value": ""
+                            },
+                            {
+                                "name": "Body",
+                                "value": ""
+                            }
+                        ],
+                        "type": "CUSTOM"
+                    }],
                     "issuanceCriteria": {"conditionalCriteria": []}
                 },
                 "includeX5tInIdToken": false,
@@ -1816,7 +2139,7 @@
                 "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-05T03:16:17.854Z",
+                "lastModified": "2025-09-05T03:31:41.728Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
