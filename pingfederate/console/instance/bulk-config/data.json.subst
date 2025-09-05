@@ -117,16 +117,6 @@
         },
         {
             "operationType": "SAVE",
-            "subResource": "org.sourceid.common.ExpressionManager",
-            "items": [{
-                "stringValue": "true",
-                "id": "evaluateExpressions",
-                "type": "STRING"
-            }],
-            "resourceType": "/configStore"
-        },
-        {
-            "operationType": "SAVE",
             "subResource": "org.sourceid.oauth20.domain.ClientManagerXmlFileImpl",
             "items": [{
                 "stringValue": "true",
@@ -589,7 +579,7 @@
                     },
                     "name": "UserAPI",
                     "id": "Other-3BC073D2D209BB69D62969F0DE4FF2462B038846",
-                    "lastModified": "2025-09-05T03:36:07.355Z",
+                    "lastModified": "2025-09-05T08:05:25.603Z",
                     "type": "CUSTOM",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/dataStores/descriptors/com.pingidentity.pf.datastore.other.RestDataSourceDriver",
@@ -612,7 +602,7 @@
                     "name": "ProvisionerDS (sa)",
                     "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                     "id": "ProvisionerDS",
-                    "lastModified": "2025-09-05T02:43:32.637Z",
+                    "lastModified": "2025-09-05T08:05:25.626Z",
                     "maxPoolSize": 100,
                     "blockingTimeout": 5000
                 }
@@ -733,13 +723,13 @@
                     "name": "Core",
                     "description": "Debug logging for core components.",
                     "id": "core",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "Protocol Requests and Responses",
                     "description": "Log protocol request and response messages.",
                     "id": "protocolrequestresponse",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "Policy Tree",
@@ -751,37 +741,37 @@
                     "name": "Data Store Response Times",
                     "description": "Log response times for data store requests.",
                     "id": "dsresponsetime",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "Trusted CAs",
                     "description": "Log PingFederate and JRE trusted CAs when they are loaded.",
                     "id": "trustedcas",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "XML Signatures",
                     "description": "Debug logging for XML signature operations.",
                     "id": "xmlsig",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "HTTP Request Headers",
                     "description": "Log HTTP request headers. Sensitive information, such as passwords, may be logged when this category is enabled.",
                     "id": "requestheaders",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "HTTP Request Parameters",
                     "description": "Log HTTP GET request parameters. Sensitive information, such as passwords, may be logged when this category is enabled.",
                     "id": "requestparams",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "name": "REST Data Store Requests and Responses",
                     "description": "Log REST datastore requests and responses. Sensitive information, such as passwords, may be logged when this category is enabled.",
                     "id": "restdatastore",
-                    "enabled": false
+                    "enabled": true
                 }
             ]}],
             "resourceType": "/serverSettings/logSettings"
@@ -791,10 +781,10 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
+                    "CRYPTO_ADMINISTRATOR",
+                    "DATA_COLLECTION_ADMINISTRATOR",
                     "EXPRESSION_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "DATA_COLLECTION_ADMINISTRATOR",
-                    "CRYPTO_ADMINISTRATOR",
                     "USER_ADMINISTRATOR"
                 ],
                 "auditor": false,
@@ -874,6 +864,7 @@
             "items": [{
                 "name": "Microsoft",
                 "id": "jPrLT8dXHqRSgGIq",
+                "lastModified": "2025-09-05T08:05:25.860Z",
                 "coreAttributes": [{"name": "subject"}],
                 "extendedAttributes": []
             }],
@@ -934,7 +925,7 @@
                 },
                 "name": "mypcv",
                 "id": "mypcv",
-                "lastModified": "2025-09-05T02:43:33.189Z",
+                "lastModified": "2025-09-05T08:05:26.033Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
@@ -1012,7 +1003,7 @@
                     },
                     "name": "GeneralAccessToken",
                     "id": "GeneralAccessToken",
-                    "lastModified": "2025-09-05T02:43:33.340Z",
+                    "lastModified": "2025-09-05T08:05:26.125Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin",
                         "id": "org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin"
@@ -1190,7 +1181,7 @@
                     },
                     "name": "pfruntime",
                     "id": "pfruntime",
-                    "lastModified": "2025-09-05T02:43:33.327Z",
+                    "lastModified": "2025-09-05T08:05:26.116Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin",
                         "id": "com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin"
@@ -1346,7 +1337,7 @@
                     },
                     "name": "ReferenceID",
                     "id": "ReferenceID",
-                    "lastModified": "2025-09-05T02:43:33.398Z",
+                    "lastModified": "2025-09-05T08:05:26.177Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.pf.adapters.referenceid.IdpBackchannelReferenceAuthnAdapter",
                         "id": "com.pingidentity.pf.adapters.referenceid.IdpBackchannelReferenceAuthnAdapter"
@@ -1657,7 +1648,7 @@
                     },
                     "name": "myidp",
                     "id": "myidp",
-                    "lastModified": "2025-09-05T02:43:33.443Z",
+                    "lastModified": "2025-09-05T08:05:26.220Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                         "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
@@ -1802,10 +1793,10 @@
                 "entityId": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
                 "loggingMode": "STANDARD",
                 "type": "IDP",
-                "creationDate": "2025-09-05T02:43:33.590Z",
+                "creationDate": "2025-09-05T08:05:26.434Z",
                 "errorPageMsgId": "errorDetail.spSsoFailure",
                 "baseUrl": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
-                "modificationDate": "2025-09-05T02:43:33.590Z",
+                "modificationDate": "2025-09-05T08:05:26.435Z",
                 "name": "Microsoft",
                 "id": "qC3UFVfb1gxCi5nzCqfml.FQYdH",
                 "idpBrowserSso": {
@@ -2017,6 +2008,7 @@
                     "email",
                     "family_name",
                     "given_name",
+                    "incoming_claims",
                     "middle_name",
                     "phone_number"
                 ]}},
@@ -2063,6 +2055,12 @@
                         {
                             "includeInUserInfo": true,
                             "name": "family_name",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "incoming_claims",
                             "includeInIdToken": true,
                             "multiValued": false
                         },
@@ -2122,6 +2120,10 @@
                             },
                             "value": "family_name"
                         },
+                        "incoming_claims": {
+                            "source": {"type": "EXPRESSION"},
+                            "value": "#log = @org.apache.commons.logging.LogFactory@getLog(\"com.pingidentity.ognl.logger\"),\n#cookieToFind=\"PF\",\n#cookies=#this.get(\"context.HttpRequest\").getObjectValue().getCookies(),\n#cookiesMap=new java.util.HashMap(),\n#cookies.{\n\t#cookie=#this,\n\t#log.debug(\"COOKIE NAME FROM REQUEST: \" + #cookie.getName().toString()),\n\t#log.debug(\"COOKIE VALUE FROM REQUEST: \" + #cookie.getValue().toString()),\n\t#cookiesMap.put(#cookie.getName(),#cookie.getValue())\n},\n#cookieValue=#cookiesMap.containsKey(#cookieToFind)?#cookiesMap.get(#cookieToFind):nul"
+                        },
                         "email": {
                             "source": {
                                 "id": "userapi",
@@ -2160,7 +2162,7 @@
                 "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-05T03:39:45.259Z",
+                "lastModified": "2025-09-05T21:44:58.172Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
@@ -2228,15 +2230,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-05T02:43:33.859Z",
+                    "creationDate": "2025-09-05T08:05:26.793Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["ACCESS_TOKEN_VALIDATION"],
-                    "modificationDate": "2025-09-05T02:43:33.859Z",
+                    "modificationDate": "2025-09-05T08:05:26.793Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
+                    "clientSecretChangedTime": "2025-09-05T08:05:26.000Z",
                     "name": "PingAccessResourceServer",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -2280,15 +2282,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-05T02:43:33.881Z",
+                    "creationDate": "2025-09-05T08:05:26.840Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["AUTHORIZATION_CODE"],
-                    "modificationDate": "2025-09-05T02:43:33.881Z",
+                    "modificationDate": "2025-09-05T08:05:26.840Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
+                    "clientSecretChangedTime": "2025-09-05T08:05:26.000Z",
                     "name": "PingAccessWebAccessManagement",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -2334,7 +2336,7 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-05T02:43:33.890Z",
+                    "creationDate": "2025-09-05T08:05:26.852Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/callback"],
                     "authorizationDetailTypes": [],
@@ -2343,14 +2345,14 @@
                         "CLIENT_CREDENTIALS",
                         "ACCESS_TOKEN_VALIDATION"
                     ],
-                    "modificationDate": "2025-09-05T02:43:33.890Z",
+                    "modificationDate": "2025-09-05T08:05:26.852Z",
                     "defaultAccessTokenManagerRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
                         "id": "pfruntime"
                     },
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": true,
-                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
+                    "clientSecretChangedTime": "2025-09-05T08:05:26.000Z",
                     "name": "providerapi",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -2445,7 +2447,7 @@
                 },
                 "name": "OAuth Client",
                 "id": "OAuthClientSelector",
-                "lastModified": "2025-09-05T02:43:33.968Z",
+                "lastModified": "2025-09-05T08:05:26.949Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/authenticationSelectors/descriptors/com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector",
                     "id": "com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector"
