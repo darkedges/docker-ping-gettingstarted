@@ -312,7 +312,7 @@
                 "name": "ProvisionerDS (sa)",
                 "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                 "id": "ProvisionerDS",
-                "lastModified": "2025-09-04T02:33:07.153Z",
+                "lastModified": "2025-09-05T02:43:32.637Z",
                 "maxPoolSize": 100,
                 "blockingTimeout": 5000
             }],
@@ -492,8 +492,8 @@
                 "roles": [
                     "EXPRESSION_ADMINISTRATOR",
                     "CRYPTO_ADMINISTRATOR",
-                    "ADMINISTRATOR",
                     "DATA_COLLECTION_ADMINISTRATOR",
+                    "ADMINISTRATOR",
                     "USER_ADMINISTRATOR"
                 ],
                 "auditor": false,
@@ -633,7 +633,7 @@
                 },
                 "name": "mypcv",
                 "id": "mypcv",
-                "lastModified": "2025-09-04T02:33:07.596Z",
+                "lastModified": "2025-09-05T02:43:33.189Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
@@ -711,7 +711,7 @@
                     },
                     "name": "GeneralAccessToken",
                     "id": "GeneralAccessToken",
-                    "lastModified": "2025-09-04T02:33:07.673Z",
+                    "lastModified": "2025-09-05T02:43:33.340Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin",
                         "id": "org.sourceid.oauth20.token.plugin.impl.ReferenceBearerAccessTokenManagementPlugin"
@@ -889,7 +889,7 @@
                     },
                     "name": "pfruntime",
                     "id": "pfruntime",
-                    "lastModified": "2025-09-05T00:38:08.007Z",
+                    "lastModified": "2025-09-05T02:43:33.327Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin",
                         "id": "com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin"
@@ -901,40 +901,10 @@
                     "attributeContract": {
                         "defaultSubjectAttribute": "sub",
                         "coreAttributes": [],
-                        "extendedAttributes": [
-                            {
-                                "name": "sub",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "birthdate",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "address",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "name",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "phone_number",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "given_name",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "family_name",
-                                "multiValued": false
-                            },
-                            {
-                                "name": "email",
-                                "multiValued": false
-                            }
-                        ]
+                        "extendedAttributes": [{
+                            "name": "sub",
+                            "multiValued": false
+                        }]
                     },
                     "selectionSettings": {"resourceUris": []}
                 }
@@ -1037,7 +1007,7 @@
                             },
                             {
                                 "name": "Include Null Attributes",
-                                "value": ""
+                                "value": "false"
                             },
                             {
                                 "name": "Transport Mode",
@@ -1075,7 +1045,7 @@
                     },
                     "name": "ReferenceID",
                     "id": "ReferenceID",
-                    "lastModified": "2025-09-04T07:41:57.379Z",
+                    "lastModified": "2025-09-05T02:43:33.398Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.pf.adapters.referenceid.IdpBackchannelReferenceAuthnAdapter",
                         "id": "com.pingidentity.pf.adapters.referenceid.IdpBackchannelReferenceAuthnAdapter"
@@ -1386,7 +1356,7 @@
                     },
                     "name": "myidp",
                     "id": "myidp",
-                    "lastModified": "2025-09-04T05:19:43.225Z",
+                    "lastModified": "2025-09-05T02:43:33.443Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                         "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
@@ -1531,10 +1501,10 @@
                 "entityId": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
                 "loggingMode": "STANDARD",
                 "type": "IDP",
-                "creationDate": "2025-09-04T02:33:07.866Z",
+                "creationDate": "2025-09-05T02:43:33.590Z",
                 "errorPageMsgId": "errorDetail.spSsoFailure",
                 "baseUrl": "https://login.microsoftonline.com/224fe641-9036-4262-9a10-281a65cdbf6e/v2.0",
-                "modificationDate": "2025-09-04T05:43:48.087Z",
+                "modificationDate": "2025-09-05T02:43:33.590Z",
                 "name": "Microsoft",
                 "id": "qC3UFVfb1gxCi5nzCqfml.FQYdH",
                 "idpBrowserSso": {
@@ -1660,8 +1630,7 @@
                             }
                         ]
                     }
-                },
-                "licenseConnectionGroup": ""
+                }
             }],
             "resourceType": "/sp/idpConnections"
         },
@@ -1747,7 +1716,7 @@
                     "email",
                     "family_name",
                     "given_name",
-                    "name",
+                    "middle_name",
                     "phone_number"
                 ]}},
                 "returnIdTokenOnRefreshGrant": false,
@@ -1774,12 +1743,6 @@
                         },
                         {
                             "includeInUserInfo": true,
-                            "name": "name",
-                            "includeInIdToken": true,
-                            "multiValued": false
-                        },
-                        {
-                            "includeInUserInfo": true,
                             "name": "phone_number",
                             "includeInIdToken": true,
                             "multiValued": false
@@ -1787,6 +1750,12 @@
                         {
                             "includeInUserInfo": true,
                             "name": "given_name",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "middle_name",
                             "includeInIdToken": true,
                             "multiValued": false
                         },
@@ -1818,10 +1787,6 @@
                             "source": {"type": "TEXT"},
                             "value": "birthdate"
                         },
-                        "name": {
-                            "source": {"type": "TEXT"},
-                            "value": "name"
-                        },
                         "phone_number": {
                             "source": {"type": "TEXT"},
                             "value": "phone_number"
@@ -1829,6 +1794,10 @@
                         "given_name": {
                             "source": {"type": "TEXT"},
                             "value": "given_name"
+                        },
+                        "middle_name": {
+                            "source": {"type": "TEXT"},
+                            "value": "middle_name"
                         },
                         "family_name": {
                             "source": {"type": "TEXT"},
@@ -1847,7 +1816,7 @@
                 "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-05T00:48:07.326Z",
+                "lastModified": "2025-09-05T03:16:17.854Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
@@ -1915,15 +1884,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-04T02:33:08.216Z",
+                    "creationDate": "2025-09-05T02:43:33.859Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["ACCESS_TOKEN_VALIDATION"],
-                    "modificationDate": "2025-09-04T02:33:08.216Z",
+                    "modificationDate": "2025-09-05T02:43:33.859Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
+                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
                     "name": "PingAccessResourceServer",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -1967,15 +1936,15 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-04T02:33:08.243Z",
+                    "creationDate": "2025-09-05T02:43:33.881Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/pa/oidc/cb"],
                     "authorizationDetailTypes": [],
                     "grantTypes": ["AUTHORIZATION_CODE"],
-                    "modificationDate": "2025-09-04T02:33:08.243Z",
+                    "modificationDate": "2025-09-05T02:43:33.881Z",
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": false,
-                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
+                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
                     "name": "PingAccessWebAccessManagement",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -1994,7 +1963,6 @@
                     "persistentGrantReuseType": "SERVER_DEFAULT",
                     "persistentGrantIdleTimeoutType": "SERVER_DEFAULT",
                     "requireSignedRequests": true,
-                    "description": "",
                     "persistentGrantIdleTimeout": 0,
                     "enabled": true,
                     "requestObjectSigningAlgorithm": "ES256",
@@ -2022,24 +1990,23 @@
                     "requireDpop": false,
                     "allowAuthenticationApiInit": false,
                     "refreshTokenRollingGracePeriodType": "SERVER_DEFAULT",
-                    "creationDate": "2025-09-04T02:33:08.252Z",
+                    "creationDate": "2025-09-05T02:43:33.890Z",
                     "deviceFlowSettingType": "SERVER_DEFAULT",
                     "redirectUris": ["https://www.traefik.me/callback"],
-                    "logoUrl": "",
                     "authorizationDetailTypes": [],
                     "grantTypes": [
                         "AUTHORIZATION_CODE",
                         "CLIENT_CREDENTIALS",
                         "ACCESS_TOKEN_VALIDATION"
                     ],
-                    "modificationDate": "2025-09-04T11:16:33.048Z",
+                    "modificationDate": "2025-09-05T02:43:33.890Z",
                     "defaultAccessTokenManagerRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
                         "id": "pfruntime"
                     },
                     "clientSecretRetentionPeriodType": "SERVER_DEFAULT",
                     "requirePushedAuthorizationRequests": true,
-                    "clientSecretChangedTime": "2025-09-04T02:33:08.000Z",
+                    "clientSecretChangedTime": "2025-09-05T02:43:33.000Z",
                     "name": "providerapi",
                     "refreshTokenRollingIntervalType": "SERVER_DEFAULT",
                     "persistentGrantExpirationType": "SERVER_DEFAULT",
@@ -2073,40 +2040,10 @@
                         },
                         "type": "IDP_ADAPTER"
                     },
-                    "attributeContractFulfillment": {
-                        "sub": {
-                            "source": {"type": "OAUTH_PERSISTENT_GRANT"},
-                            "value": "USER_KEY"
-                        },
-                        "address": {
-                            "source": {"type": "TEXT"},
-                            "value": "address"
-                        },
-                        "birthdate": {
-                            "source": {"type": "TEXT"},
-                            "value": "birthdate"
-                        },
-                        "name": {
-                            "source": {"type": "TEXT"},
-                            "value": "name"
-                        },
-                        "phone_number": {
-                            "source": {"type": "TEXT"},
-                            "value": "phone_number"
-                        },
-                        "given_name": {
-                            "source": {"type": "TEXT"},
-                            "value": "given_name"
-                        },
-                        "family_name": {
-                            "source": {"type": "TEXT"},
-                            "value": "family_name"
-                        },
-                        "email": {
-                            "source": {"type": "TEXT"},
-                            "value": "email"
-                        }
-                    },
+                    "attributeContractFulfillment": {"sub": {
+                        "source": {"type": "OAUTH_PERSISTENT_GRANT"},
+                        "value": "USER_KEY"
+                    }},
                     "id": "authz_req|myidp|pfruntime",
                     "attributeSources": [],
                     "issuanceCriteria": {"conditionalCriteria": []},
@@ -2164,7 +2101,7 @@
                 },
                 "name": "OAuth Client",
                 "id": "OAuthClientSelector",
-                "lastModified": "2025-09-04T06:26:54.093Z",
+                "lastModified": "2025-09-05T02:43:33.968Z",
                 "pluginDescriptorRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/authenticationSelectors/descriptors/com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector",
                     "id": "com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector"
