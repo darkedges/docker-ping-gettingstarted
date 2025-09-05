@@ -490,11 +490,11 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "DATA_COLLECTION_ADMINISTRATOR",
-                    "ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR",
                     "CRYPTO_ADMINISTRATOR",
-                    "USER_ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR"
+                    "ADMINISTRATOR",
+                    "DATA_COLLECTION_ADMINISTRATOR",
+                    "USER_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -889,7 +889,7 @@
                     },
                     "name": "pfruntime",
                     "id": "pfruntime",
-                    "lastModified": "2025-09-04T02:33:07.662Z",
+                    "lastModified": "2025-09-05T00:38:08.007Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/descriptors/com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin",
                         "id": "com.pingidentity.pf.access.token.management.plugins.JwtBearerAccessTokenManagementPlugin"
@@ -901,10 +901,40 @@
                     "attributeContract": {
                         "defaultSubjectAttribute": "sub",
                         "coreAttributes": [],
-                        "extendedAttributes": [{
-                            "name": "sub",
-                            "multiValued": false
-                        }]
+                        "extendedAttributes": [
+                            {
+                                "name": "sub",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "birthdate",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "address",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "name",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "phone_number",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "given_name",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "family_name",
+                                "multiValued": false
+                            },
+                            {
+                                "name": "email",
+                                "multiValued": false
+                            }
+                        ]
                     },
                     "selectionSettings": {"resourceUris": []}
                 }
@@ -1711,7 +1741,15 @@
             "items": [{
                 "returnIdTokenOnTokenExchangeGrant": false,
                 "idTokenTypHeaderValue": "",
-                "scopeAttributeMappings": {},
+                "scopeAttributeMappings": {"openid": {"values": [
+                    "address",
+                    "birthdate",
+                    "email",
+                    "family_name",
+                    "given_name",
+                    "name",
+                    "phone_number"
+                ]}},
                 "returnIdTokenOnRefreshGrant": false,
                 "includeSriInIdToken": false,
                 "includeSHashInIdToken": false,
@@ -1721,13 +1759,86 @@
                         "name": "sub",
                         "multiValued": false
                     }],
-                    "extendedAttributes": []
+                    "extendedAttributes": [
+                        {
+                            "includeInUserInfo": true,
+                            "name": "address",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "birthdate",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "name",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "phone_number",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "given_name",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "family_name",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        },
+                        {
+                            "includeInUserInfo": true,
+                            "name": "email",
+                            "includeInIdToken": true,
+                            "multiValued": false
+                        }
+                    ]
                 },
                 "attributeMapping": {
-                    "attributeContractFulfillment": {"sub": {
-                        "source": {"type": "TOKEN"},
-                        "value": "sub"
-                    }},
+                    "attributeContractFulfillment": {
+                        "sub": {
+                            "source": {"type": "TOKEN"},
+                            "value": "sub"
+                        },
+                        "address": {
+                            "source": {"type": "TEXT"},
+                            "value": "address"
+                        },
+                        "birthdate": {
+                            "source": {"type": "TEXT"},
+                            "value": "birthdate"
+                        },
+                        "name": {
+                            "source": {"type": "TEXT"},
+                            "value": "name"
+                        },
+                        "phone_number": {
+                            "source": {"type": "TEXT"},
+                            "value": "phone_number"
+                        },
+                        "given_name": {
+                            "source": {"type": "TEXT"},
+                            "value": "given_name"
+                        },
+                        "family_name": {
+                            "source": {"type": "TEXT"},
+                            "value": "family_name"
+                        },
+                        "email": {
+                            "source": {"type": "TEXT"},
+                            "value": "email"
+                        }
+                    },
                     "attributeSources": [],
                     "issuanceCriteria": {"conditionalCriteria": []}
                 },
@@ -1736,7 +1847,7 @@
                 "allowIdTokenIntrospection": false,
                 "id": "OIDC",
                 "reissueIdTokenInHybridFlow": false,
-                "lastModified": "2025-09-04T11:09:42.732Z",
+                "lastModified": "2025-09-05T00:48:07.326Z",
                 "idTokenLifetime": 5,
                 "accessTokenManagerRef": {
                     "location": "https://localhost:9999/pf-admin-api/v1/oauth/accessTokenManagers/pfruntime",
@@ -1962,10 +2073,40 @@
                         },
                         "type": "IDP_ADAPTER"
                     },
-                    "attributeContractFulfillment": {"sub": {
-                        "source": {"type": "OAUTH_PERSISTENT_GRANT"},
-                        "value": "USER_KEY"
-                    }},
+                    "attributeContractFulfillment": {
+                        "sub": {
+                            "source": {"type": "OAUTH_PERSISTENT_GRANT"},
+                            "value": "USER_KEY"
+                        },
+                        "address": {
+                            "source": {"type": "TEXT"},
+                            "value": "address"
+                        },
+                        "birthdate": {
+                            "source": {"type": "TEXT"},
+                            "value": "birthdate"
+                        },
+                        "name": {
+                            "source": {"type": "TEXT"},
+                            "value": "name"
+                        },
+                        "phone_number": {
+                            "source": {"type": "TEXT"},
+                            "value": "phone_number"
+                        },
+                        "given_name": {
+                            "source": {"type": "TEXT"},
+                            "value": "given_name"
+                        },
+                        "family_name": {
+                            "source": {"type": "TEXT"},
+                            "value": "family_name"
+                        },
+                        "email": {
+                            "source": {"type": "TEXT"},
+                            "value": "email"
+                        }
+                    },
                     "id": "authz_req|myidp|pfruntime",
                     "attributeSources": [],
                     "issuanceCriteria": {"conditionalCriteria": []},
