@@ -1251,7 +1251,7 @@
                             },
                             {
                                 "name": "Pass Phrase",
-                                "value": "${idp_adapters_items_ReferenceID_configuration_fields_Pass_Phrase_value}"
+                                "value": "${idp_adapters_items_Consent_configuration_fields_Pass_Phrase_value}"
                             },
                             {
                                 "name": "Allowed Subject DN",
@@ -1335,8 +1335,8 @@
                             }
                         ]
                     },
-                    "name": "ReferenceID",
-                    "id": "ReferenceID",
+                    "name": "Consent",
+                    "id": "Consent",
                     "lastModified": "2025-09-05T08:05:26.177Z",
                     "pluginDescriptorRef": {
                         "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.pf.adapters.referenceid.IdpBackchannelReferenceAuthnAdapter",
@@ -2561,8 +2561,8 @@
                                         "authenticationSource": {
                                             "type": "IDP_ADAPTER",
                                             "sourceRef": {
-                                                "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/ReferenceID",
-                                                "id": "ReferenceID"
+                                                "location": "https://localhost:9999/pf-admin-api/v1/idp/adapters/Consent",
+                                                "id": "Consent"
                                             }
                                         },
                                         "context": "Yes",
